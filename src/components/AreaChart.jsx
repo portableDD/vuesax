@@ -39,7 +39,7 @@ const AreaChartComp = ({
             </defs>
             <Tooltip />
             <Area
-              type="monotone"
+              type="bump"
               dataKey={dataKey}
               stroke={stroke}
               fillOpacity={1}

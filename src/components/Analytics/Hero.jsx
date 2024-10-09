@@ -1,9 +1,7 @@
 import DecoreLeft from "../../assets/img/decore-left.svg";
 import DecoreRight from "../../assets/img/decore-right.svg";
-import { FiAward } from "react-icons/fi";
-import { FiUsers } from "react-icons/fi";
-import { FiShoppingBag } from "react-icons/fi";
-import AreaChartComp from "./AreaChart";
+import { FiAward, FiShoppingBag, FiUsers } from "react-icons/fi";
+import AreaChartComp from "../AreaChart";
 
 const Subscribers = [
   {

@@ -63,7 +63,9 @@ export default {
   			sidebar: '0px 2px 10px 0px #0000002B',
   			activeSideBar: '-1px 1px 8px 0px #7E72F294',
   			congrat: '0px 2px 8px 0px #6050F441',
-			rader: '0px 4px 10px 0px #00000046;'
+			rader: '0px 4px 10px 0px #00000046;',
+			weather: '0px 2px 8px 0px #00000000',
+			message: '-2px 2px 4px 0px #0000002A'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
