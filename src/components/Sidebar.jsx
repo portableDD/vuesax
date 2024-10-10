@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import Logo from "../assets/img/logo.svg";
@@ -33,20 +33,33 @@ import { HiOutlineShieldCheck } from "react-icons/hi";
 import { FaRegEdit } from "react-icons/fa";
 import { RiMenuFill } from "react-icons/ri";
 import { FaRegEyeSlash } from "react-icons/fa";
+import { IoMdWatch } from "react-icons/io";
+import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
   const [otherMenu, setOtherMenu] = useState(false);
+  const [openCard, setOpenCard] = useState(false);
 
   const closeMenu = () => {
     setOpen(!open);
   };
+
   const openMenu = () => {
     setOtherMenu(!otherMenu);
     // if(otherMenu === false){
     //   setOpen(true)
     // }
     setOpen(false);
+  };
+
+  const navigate = useNavigate()
+
+  const CardMenu = () => {
+    setOpenCard(!openCard);
+    setOtherMenu(false);
+    setOpen(false)
+    navigate('/card')
   };
 
   const location = useLocation();
@@ -162,15 +175,33 @@ const Sidebar = () => {
               <span className="pl-2">Color</span>
             </NavLink>
             {/* card */}
-            <div
-              className=" flex justify-between items-center px-3"
-              onClick={openMenu}
-            >
-              <NavLink className="flex items-center gap-2">
-                <LuCreditCard className="text-base" />
-                <p className="">Card</p>
-              </NavLink>
-              {otherMenu ? <FaAngleDown /> : <FaAngleRight />}
+            <div>
+              <div
+                className=" flex justify-between items-center px-3"
+                onClick={CardMenu}
+              >
+                <NavLink className="flex items-center gap-2">
+                  <LuCreditCard className="text-base" />
+                  <p className="">Card</p>
+                </NavLink>
+                {openCard ? <FaAngleDown /> : <FaAngleRight />}
+              </div>
+              {openCard && (
+                <div className="pt-2 flex flex-col gap-1.5">
+                  <NavLink className={linkClass} to="/card">
+                    <FaRegCircle className="inline" />
+                    <span className="pl-2">Card Action</span>
+                  </NavLink>
+                  <NavLink className={linkClass} to="/electronics">
+                    <IoMdWatch className="inline" />
+                    <span className="pl-2">Electronics</span>
+                  </NavLink>
+                  <NavLink className={linkClass} to="/checkout">
+                    <MdOutlineShoppingCartCheckout className="inline" />
+                    <span className="pl-2">Checkout</span>
+                  </NavLink>
+                </div>
+              )}
             </div>
 
             {/* table */}
@@ -316,7 +347,9 @@ const Sidebar = () => {
           </div>
         </div>
 
-        {checkLocation("/ecommerce") && (
+        {(checkLocation("/ecommerce") ||
+          checkLocation("/card") ||
+          checkLocation("/electronics")) && (
           <>
             {/* charts and map */}
             <div className="pt-5">

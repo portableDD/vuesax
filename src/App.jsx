@@ -13,6 +13,9 @@ import ChatPage from "./pages/ChatPage";
 import TodoPage from "./pages/TodoPage";
 import CalenderPage from "./pages/CalenderPage";
 import ComingSoonPage from "./pages/ComingSoonPage";
+import CardAction from "./pages/CardAction";
+import Electronics from "./pages/Electronics";
+import CheckoutPage from "./pages/CheckoutPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,6 +29,9 @@ const router = createBrowserRouter(
       <Route path="to-do" element={<TodoPage />} />
       <Route path="calender" element={<CalenderPage />} />
       {/* ui elements */}
+      <Route path="card" element={<CardAction />} />
+      <Route path="electronics" element={<Electronics />} />
+      <Route path="checkout" element={<CheckoutPage />} />
       <Route path="color" element={<ComingSoonPage />} />
       <Route path="table" element={<ComingSoonPage />} />
       {/* form */}

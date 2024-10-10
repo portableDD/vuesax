@@ -68,7 +68,18 @@
   }
 }
 
+@layer components {
+  input:-webkit-autofill {
+    background-color: transparent !important;
+    -webkit-box-shadow:0 0 0 1000px #fff inset !important ;
+  }
+}
+
 
 .border-line:not(:last-child) {
   border-bottom: 1px solid #ADADAD;
+}
+
+.border-style:not(:last-child) {
+  border-bottom: 1px solid #EBEBEB80;
 }
