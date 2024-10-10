@@ -65,7 +65,8 @@ export default {
   			congrat: '0px 2px 8px 0px #6050F441',
 			rader: '0px 4px 10px 0px #00000046;',
 			weather: '0px 2px 8px 0px #00000000',
-			message: '-2px 2px 4px 0px #0000002A'
+			message: '-2px 2px 4px 0px #0000002A',
+			chatMessage: ' 0px 3px 6px 0px #0000003A'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

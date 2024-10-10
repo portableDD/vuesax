@@ -100,7 +100,7 @@ const Chat = () => {
             type="text"
             name="text"
             id="text"
-            className="bg-inherit w-full rounded border border-[#CECECE] outline-none py-1.5 px-2 text-gray-900  placeholder:text-gray-400  sm:text-sm sm:leading-6"
+            className="bg-inherit w-full rounded border border-[#CECECE] placeholder:text-xs outline-none py-1.5 px-2 text-gray-900  placeholder:text-gray-400  sm:text-sm sm:leading-6"
             placeholder="Type your message"
           />
           <button className="px-2 py-2 bg-[#7961F9] rounded">
