@@ -68,12 +68,12 @@
   }
 }
 
-@layer components {
+/* @layer components {
   input:-webkit-autofill {
-    background-color: transparent !important;
-    -webkit-box-shadow:0 0 0 1000px #fff inset !important ;
+    background-color: inherit !important;
+    -webkit-box-shadow:0 0 0 1000px transparent inset !important ;
   }
-}
+} */
 
 
 .border-line:not(:last-child) {
@@ -83,3 +83,4 @@
 .border-style:not(:last-child) {
   border-bottom: 1px solid #EBEBEB80;
 }
+

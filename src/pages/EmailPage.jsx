@@ -1,6 +1,6 @@
 import AppFooter from "@/components/AppFooter";
-import EmailTaskNavbar from "@/components/Emails And Tasks/EmailTaskNavbar";
-import EmailTaskContent from "@/components/Emails And Tasks/EmailTaskContent";
+import EmailTaskNavbar from "@/components/Emails/EmailTaskNavbar";
+import EmailTaskContent from "@/components/Emails/EmailTaskContent";
 
 const EmailPage = () => {
   return (
@@ -10,9 +10,7 @@ const EmailPage = () => {
           <EmailTaskNavbar />
         </div>
         <div className="w-full lg:w-4/5 xl:w-[80%] ">
-          <div
-            className="w-full bg-cover h-full bg-center bg-no-repeat"
-          >
+          <div className="w-full h-full ">
             <EmailTaskContent />
           </div>
         </div>

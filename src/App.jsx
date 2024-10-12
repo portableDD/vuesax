@@ -16,6 +16,8 @@ import ComingSoonPage from "./pages/ComingSoonPage";
 import CardAction from "./pages/CardAction";
 import Electronics from "./pages/Electronics";
 import CheckoutPage from "./pages/CheckoutPage";
+import ProductGridPage from "./pages/ProductGridPage";
+import ProductListPage from "./pages/ProductListPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,9 +32,14 @@ const router = createBrowserRouter(
       <Route path="calender" element={<CalenderPage />} />
       {/* ui elements */}
       <Route path="card" element={<CardAction />} />
-      <Route path="electronics" element={<Electronics />} />
+      {/* electroinics route */}
+      <Route path="electronics" element={<Electronics />}>
+        <Route index  element={<ProductGridPage />} />
+        <Route path="/electronics/list"  element={<ProductListPage />} />
+      </Route>
       <Route path="checkout" element={<CheckoutPage />} />
       <Route path="color" element={<ComingSoonPage />} />
+      <Route path="wishlist" element={<ComingSoonPage />} />
       <Route path="table" element={<ComingSoonPage />} />
       {/* form */}
       <Route path="form-layout" element={<ComingSoonPage />} />

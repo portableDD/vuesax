@@ -34,7 +34,6 @@ import { FaRegEdit } from "react-icons/fa";
 import { RiMenuFill } from "react-icons/ri";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { IoMdWatch } from "react-icons/io";
-import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
@@ -76,7 +75,7 @@ const Sidebar = () => {
       : "hover:bg-indigo-900 hover:text-white rounded-md px-3 py-2";
 
   return (
-    <div className="hidden lg:block px-3 py-3 shadow-sidebar scroll-smooth h-screen fixed top-0 left-0 bg-contentBgColor w-52">
+    <div className="hidden lg:block px-3 py-3 shadow-sidebar scroll-smooth h-screen fixed top-0 left-0 bg-contentBgColor w-56">
       <div className="flex flex-col gap-2 font-semibold overflow-y-scroll relative h-full">
         {/* logo, name and icon div */}
         <div className="flex justify-between items-center">
@@ -195,10 +194,6 @@ const Sidebar = () => {
                   <NavLink className={linkClass} to="/electronics">
                     <IoMdWatch className="inline" />
                     <span className="pl-2">Electronics</span>
-                  </NavLink>
-                  <NavLink className={linkClass} to="/checkout">
-                    <MdOutlineShoppingCartCheckout className="inline" />
-                    <span className="pl-2">Checkout</span>
                   </NavLink>
                 </div>
               )}

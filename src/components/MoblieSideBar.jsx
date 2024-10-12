@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import Logo from "../assets/img/logo.svg";
 import Component from "../assets/img/archive.svg";
-import { MdOutlineHome, MdOutlineShoppingCartCheckout } from "react-icons/md";
+import { MdOutlineHome} from "react-icons/md";
 import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa6";
 import { FaRegCircle } from "react-icons/fa";
@@ -192,10 +192,6 @@ const MoblieSideBar = () => {
                 <NavLink className={linkClass} to="/electronics">
                   <IoMdWatch className="inline" />
                   <span className="pl-2">Electronics</span>
-                </NavLink>
-                <NavLink className={linkClass} to="/checkout">
-                  <MdOutlineShoppingCartCheckout className="inline" />
-                  <span className="pl-2">Checkout</span>
                 </NavLink>
               </div>
               )}

@@ -21,7 +21,7 @@ import MoblieSideBar from "./MoblieSideBar";
 const Navbar = () => {
 
   return (
-    <nav className="max-w-[95%] lg:max-w-[75%] xl:max-w-[82%] w-full bg-contentBgColor rounded-md fixed z-50">
+    <nav className="max-w-[95%] lg:max-w-[75%] xl:max-w-[80%] w-full bg-contentBgColor rounded-md fixed z-50">
       <div className="shadow-navbar py-0.5 px-2 flex justify-between items-center">
         {/* icon div */}
         <div className="flex gap-2 md:gap-3 items-center text-base ">
