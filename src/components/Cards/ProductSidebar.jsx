@@ -2,10 +2,12 @@ import { Navbar } from "./CardArrays";
 import Rating from "./Rating";
 import SingleRange from "./Range";
 import SingleCatergoryBrands from "./SingleCatergoryBrands";
+import { useState } from "react";
 // import Slider from "./Slider";
 
 const ProductSidebar = () => {
   const { range, catergory, brand } = Navbar;
+  const [ranges, setRanges] = useState(1.99);
   return (
     <div className="hidden w-full lg:w-72 xl:w-[25%] lg:block  ">
       <div className="w-full flex flex-col gap-3.5">
@@ -26,13 +28,23 @@ const ProductSidebar = () => {
           <div className="border-b border-[#D6D6D6] ">
             <p className="w-full font-semibold flex justify-between item-center">
               <span>Slider</span>
-              <span>1.99 - 4098</span>
+              <span>{ranges} / 4098</span>
             </p>
             <div className="pt-3 pb-5 text-[13px]">
-              <div className="bg-white rounded-full mt-1.5">
+              {/* <div className="bg-white rounded-full mt-1.5">
                 <div className="bg-[#6F64F8] w-[73%] rounded-full py-0.5"></div>
-              </div>
+              </div> */}
               {/* <Slider /> */}
+              <input
+                type="range"
+                name="slider"
+                id="slider"
+                className="w-full bg-[#6F64F8]"
+                min={1.99}
+                max={4098}
+                value={ranges}
+                onChange={(e) => setRanges(e.target.value)}
+              />
             </div>
           </div>
           {/* category */}

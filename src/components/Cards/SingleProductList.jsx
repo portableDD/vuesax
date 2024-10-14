@@ -16,7 +16,13 @@ const SingleProductList = ({ rating, price, img, title, by, desc }) => {
     <div className="w-full bg-contentBgColor rounded-md shadow-navbar">
       <div className="flex flex-col lg:flex-row justify-between">
         {/* img and desc */}
-        <div className="w-full flex justify-center item-center flex-col lg:flex-row gap-5 py-3 px-3 lg:border-r border-[#DADADA80] xl:max-w-[80%]">
+        <div
+          className={
+            checkLocation("/electronics/list")
+              ? "w-full flex justify-center item-center flex-col lg:flex-row gap-5 py-3 px-3 lg:border-r border-[#DADADA80] xl:max-w-[80%]"
+              : "w-full flex justify-center item-center flex-col lg:flex-row gap-5 py-3 px-3 lg:border-r border-[#DADADA80] xl:max-w-[70%]"
+          }
+        >
           <div className="flex justify-center item-center py-3 px-3 h-52 xl:h-auto ">
             <img src={img} alt="img" />
           </div>
@@ -30,7 +36,7 @@ const SingleProductList = ({ rating, price, img, title, by, desc }) => {
             {checkLocation("/electronics/list") ? (
               <div className="text-xs w-full xl:max-w-[80%]">{desc}</div>
             ) : (
-             <div className="text-xs w-ful flex flex-col gap-5">
+              <div className="text-xs w-ful flex flex-col gap-5">
                 <p className="text-[#2DCD7A]">in stock</p>
                 <div>
                   <p>Quantity</p>
@@ -38,14 +44,20 @@ const SingleProductList = ({ rating, price, img, title, by, desc }) => {
                 </div>
                 <div>
                   <p className="text-[#999999]">Delivery by, Sat Mar 23</p>
-                  <p className="text-[#2DCD7A]">17%  Off 4 Offers Available</p>
+                  <p className="text-[#2DCD7A]">17% Off 4 Offers Available</p>
                 </div>
-             </div>
+              </div>
             )}
           </div>
         </div>
         {/* move to cart and wishlist, ratings too */}
-        <div className="flex flex-col items-center gap-3 py-3 px-3 xl:w-full xl:max-w-[20%]">
+        <div
+          className={
+            checkLocation("/electronics/list")
+              ? "flex flex-col items-center gap-3 py-3 px-3 xl:w-full xl:max-w-[20%]"
+              : "flex flex-col items-center gap-3 py-3 px-3 xl:w-full xl:max-w-[30%]"
+          }
+        >
           {/* rating prices and free shipping */}
           <div className="text-center w-full ">
             <p className="flex justify-end">
@@ -74,13 +86,13 @@ const SingleProductList = ({ rating, price, img, title, by, desc }) => {
           {/* wishlist */}
           <button className="w-full py-3 px-3 bg-[#B8C2CC] text-[#2C2C20] text-center rounded-md uppercase text-xs font-medium">
             {checkLocation("/electronics/list") ? (
-              <Link to={'/wishlist'}>
+              <Link to={"/wishlist"}>
                 <FaRegHeart className="inline" />
                 <span className="pl-2">wishlist</span>
               </Link>
             ) : (
               <>
-                <RxCross2 className="inline" />
+                <RxCross2 className="inline font-semibold" />
                 <span className="pl-2">Remove</span>
               </>
             )}
@@ -88,12 +100,12 @@ const SingleProductList = ({ rating, price, img, title, by, desc }) => {
           {/* add to cart */}
           <button className="w-full py-3 px-3 bg-[#6F64F8] text-center rounded-md uppercase text-xs font-medium">
             {checkLocation("/electronics/list") ? (
-              <Link to={'/checkout'}>
-                 <FiShoppingBag className="inline" />
-                 <span className="pl-2">add to cart</span>
+              <Link to={"/checkout"}>
+                <FiShoppingBag className="inline" />
+                <span className="pl-2">add to cart</span>
               </Link>
             ) : (
-              <Link to={'/wishlist'}>
+              <Link to={"/wishlist"}>
                 <FaRegHeart className="inline" />
                 <span className="pl-2 text-xs">Move To wishlist</span>
               </Link>

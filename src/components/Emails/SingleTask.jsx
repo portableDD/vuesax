@@ -15,7 +15,7 @@ const SingleTask = ({ subject, isSpan, spanText, color, message, isChecked }) =>
             checked={isChecked}
             className="h-4 w-4  rounded border-white"
           />
-          <p id="comments-description" className="flex gap-6 items-center">
+          <p id="comments-description" className="flex flex-col sm:flex-row gap-3 sm:gap-6 sm:items-center">
             <span className="font-semibold">{subject}</span>
             {isSpan && (
               <span className="bg-[#0F1642] rounded-xl flex gap-2 items-center py-1 px-4 text-xs">
@@ -31,7 +31,7 @@ const SingleTask = ({ subject, isSpan, spanText, color, message, isChecked }) =>
             <FiTrash />
         </div>
       </div>
-      <div className="-mt-1 ml-10 mb-3 text-[13px] w-full max-w-[680px]">
+      <div className="-mt-1 ml-10 mb-3 text-[13px] w-full max-w-[220px] sm:max-w-[680px]">
         <p>{message}</p>
       </div>
     </div>

@@ -1,4 +1,4 @@
-const CheckoutOptions = () => {
+const CartOptions = () => {
   return (
     <div className="flex flex-col justify-between h-full">
       <div className="border-b border-[#E4E4E4] py-3 w-full">
@@ -44,4 +44,4 @@ const CheckoutOptions = () => {
   );
 };
 
-export default CheckoutOptions;
+export default CartOptions;

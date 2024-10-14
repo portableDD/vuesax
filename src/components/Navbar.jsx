@@ -60,7 +60,7 @@ const Navbar = () => {
               </SheetTrigger>
               <SheetContent
                 side="left"
-                className="w-[100px] sm:w-[280px] text-white bg-contentBgColor"
+                className="w-[250px] sm:w-[280px] text-white bg-contentBgColor"
               >
                 <SheetHeader className="hidden">
                   <SheetTitle>Are you absolutely sure?</SheetTitle>
@@ -69,7 +69,7 @@ const Navbar = () => {
                     your account and remove your data from our servers.
                   </SheetDescription>
                 </SheetHeader>
-                <div className="w-full">
+                <div>
                  <MoblieSideBar />
                 </div>
               </SheetContent>
