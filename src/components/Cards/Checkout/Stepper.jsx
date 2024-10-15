@@ -4,25 +4,25 @@ const Stepper = ({ currentStep }) => {
     <div className=" relative flex items-center justify-between w-full max-w-4xl mx-auto mt-5 font-semibold overflow-hidden">
       <div
         aria-hidden="true"
-        className="absolute left-4 top-4 -ml-px mt-0.5 h-1 w-full bg-[#6F64F8]"
+        className="absolute left-4 top-4 mt-0.5 h-1 w-full bg-[#6F64F8]"
       />
       <div
         className={`flex items-center justify-center w-10 h-10 rounded-full z-30 ${
-          currentStep >= 1 ? "bg-[#6F64F8] text-white" : "bg-gray-300"
+          currentStep >= 1 ? "bg-[#6F64F8] text-white" : "border-2 border-white text-white"
         }`}
       >
         1
       </div>
       <div
         className={`flex items-center justify-center w-10 h-10 rounded-full z-30 ${
-          currentStep >= 2 ? "bg-[#6F64F8] text-white" : "bg-gray-300"
+          currentStep >= 2 ? "bg-[#6F64F8] text-white" : "border-2 border-white text-white"
         }`}
       >
         2
       </div>
       <div
         className={`flex items-center justify-center w-10 h-10 rounded-full z-30 ${
-          currentStep === 3 ? "bg-[#6F64F8] text-white" : "bg-gray-300"
+          currentStep === 3 ? "bg-[#6F64F8] text-white" : "border-2 border-white text-white"
         }`}
       >
         3
