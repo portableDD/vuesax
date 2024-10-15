@@ -5,37 +5,37 @@ const text = [
   {
     label: "Full Name:",
     id: "name",
-    type: 'text'
+    type: "text",
   },
   {
     label: "Landmark e.g. near apollo hospital:",
     id: "landmark",
-    type: 'text'
+    type: "text",
   },
   {
     label: "Mobile number:",
     id: "mobile",
-    type: 'tel'
+    type: "tel",
   },
   {
     label: "Town/City:",
     id: "town",
-    type: 'text'
+    type: "text",
   },
   {
     label: "Pincode:",
     id: "pin",
-    type: "tel"
+    type: "tel",
   },
   {
     label: "State:",
     id: "state",
-    type: "text"
+    type: "text",
   },
   {
     label: "Flat, House no., Building, Company, Apartment:",
     id: "flat",
-    type: 'text'
+    type: "text",
   },
 ];
 
@@ -90,11 +90,11 @@ const CartForm = ({ nextStep }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const validateError = validate();
-    if (validateError) {
-      setErrors(validateError);
-    } else {
-      nextStep();
-    }
+    setErrors(validateError);
+    nextStep();
+    // if (!validateError) {
+    // } else {
+    // }
   };
 
   return (
