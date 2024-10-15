@@ -5,34 +5,41 @@ const text = [
   {
     label: "Full Name:",
     id: "name",
+    type: 'text'
   },
   {
     label: "Landmark e.g. near apollo hospital:",
     id: "landmark",
+    type: 'text'
   },
   {
     label: "Mobile number:",
     id: "mobile",
+    type: 'tel'
   },
   {
     label: "Town/City:",
     id: "town",
+    type: 'text'
   },
   {
     label: "Pincode:",
     id: "pin",
+    type: "tel"
   },
   {
     label: "State:",
     id: "state",
+    type: "text"
   },
   {
     label: "Flat, House no., Building, Company, Apartment:",
     id: "flat",
+    type: 'text'
   },
 ];
 
-const CartForm = () => {
+const CartForm = ({ nextStep }) => {
   const [formData, setFormData] = useState({
     name: "",
     landmark: "",
@@ -50,38 +57,44 @@ const CartForm = () => {
     setErrors({ ...errors, [e.target.id]: "" }); // Reset error on change
   };
   const validate = () => {
-    const newError = {}
-    if(!formData.name){
+    const newError = {};
+    if (!formData.name) {
       newError.name = "Name is required";
     }
-    if(!formData.landmark){
+    if (!formData.landmark) {
       newError.landmark = "Landmark is required";
     }
-    if(!formData.mobile){
+    if (!formData.mobile) {
       newError.mobile = "Mobile number is required";
     }
-    if(!formData.town){
+    if (!formData.town) {
       newError.town = "Town/city is required";
     }
-    if(!formData.pin){
+    if (!formData.pin) {
       newError.pin = "Pincode is required";
     }
-    if(!formData.state){
+    if (!formData.state) {
       newError.state = "State is required";
     }
-    if(!formData.flat){
-      newError.flat = "Flat or House no. or Building or Company or Apartment is required";
+    if (!formData.flat) {
+      newError.flat =
+        "Flat or House no. or Building or Company or Apartment is required";
     }
-    if(!formData.area){
-      newError.area = "Area or Colony or Street or Sector or Village is required";
+    if (!formData.area) {
+      newError.area =
+        "Area or Colony or Street or Sector or Village is required";
     }
-    
-    return newError
-  }
+
+    return newError;
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validateError = validate()
-    setErrors(validateError)
+    const validateError = validate();
+    if (validateError) {
+      setErrors(validateError);
+    } else {
+      nextStep();
+    }
   };
 
   return (
@@ -100,12 +113,14 @@ const CartForm = () => {
             <InputLabel
               title={item.label}
               value={formData[item.id]} // Dynamically setting value from formData
-              type={"text"}
+              type={item.type}
               id={item.id}
               onChange={handleChange}
             />
             {errors[item.id] && (
-              <p className="text-red-500 text-sm font-semibold mt-2">{errors[item.id]}</p> // Error message
+              <p className="text-red-500 text-sm font-semibold mt-2">
+                {errors[item.id]}
+              </p> // Error message
             )}
           </div>
         ))}
@@ -137,7 +152,9 @@ const CartForm = () => {
             onChange={handleChange}
           />
           {errors.area && (
-            <p className="text-red-500 text-sm font-semibold mt-2">{errors.area}</p> // Error message
+            <p className="text-red-500 text-sm font-semibold mt-2">
+              {errors.area}
+            </p> // Error message
           )}
         </div>
 

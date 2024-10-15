@@ -1,4 +1,4 @@
-const CartFormOptions = () => {
+const CartFormOptions = ({next}) => {
   return (
     <div className="flex flex-col justify-between h-full">
       <div className="border-b border-[#E4E4E4] py-3 w-full">
@@ -15,7 +15,7 @@ const CartFormOptions = () => {
         </p>
       </div>
       <div className="w-full">
-        <button className="w-full py-3 bg-[#6F64F8] rounded-md mt-3 font-semibold uppercase">
+        <button className="w-full py-3 bg-[#6F64F8] rounded-md mt-3 font-semibold uppercase" onClick={next}>
           Deliver to this address
         </button>
       </div>

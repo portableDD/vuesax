@@ -1,15 +1,33 @@
 // Stepper Component - Displays steps in a form wizard
 const Stepper = ({ currentStep }) => {
-    const steps = [
-      { label: "Your details", description: "Name and email" },
-      { label: "Choose a password", description: "Choose a secure password" },
-      { label: "Invite your team", description: "Start collaborating" },
-      { label: "Upload school's document", description: "For account verification" },
-    ];
-  
-    return (
-      <div className="flex items-center justify-between w-full max-w-4xl mx-auto mt-5">
-        {steps.map((step, index) => (
+  return (
+    <div className=" relative flex items-center justify-between w-full max-w-4xl mx-auto mt-5 font-semibold overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="absolute left-4 top-4 -ml-px mt-0.5 h-1 w-full bg-[#6F64F8]"
+      />
+      <div
+        className={`flex items-center justify-center w-10 h-10 rounded-full z-30 ${
+          currentStep >= 1 ? "bg-[#6F64F8] text-white" : "bg-gray-300"
+        }`}
+      >
+        1
+      </div>
+      <div
+        className={`flex items-center justify-center w-10 h-10 rounded-full z-30 ${
+          currentStep >= 2 ? "bg-[#6F64F8] text-white" : "bg-gray-300"
+        }`}
+      >
+        2
+      </div>
+      <div
+        className={`flex items-center justify-center w-10 h-10 rounded-full z-30 ${
+          currentStep === 3 ? "bg-[#6F64F8] text-white" : "bg-gray-300"
+        }`}
+      >
+        3
+      </div>
+      {/* {steps.map((step, index) => (
           <div key={index} className="flex flex-col items-center w-full">
             <div className="relative flex items-center justify-center">
               {index > 0 && (
@@ -33,9 +51,9 @@ const Stepper = ({ currentStep }) => {
             </div>
            
           </div>
-        ))}
-      </div>
-    );
-  };
-  
-  export default Stepper;
+        ))} */}
+    </div>
+  );
+};
+
+export default Stepper;
