@@ -15,7 +15,7 @@ const outer = [
 ];
 const CircularChart = () => {
   return (
-    <div className="w-full">
+    <div className="w-full py-3">
       <div className="flex justify-center item-center mx-auto my-5">
         <div className="w-52 h-[200px]">
           <ResponsiveContainer width="100%" height="100%">
