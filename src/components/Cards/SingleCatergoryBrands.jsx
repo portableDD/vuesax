@@ -1,11 +1,11 @@
 
 
-const SingleCatergoryBrands = ({title, num}) => {
+const SingleCatergoryBrands = ({title, num, id}) => {
   return (
     <div className="w-full flex justify-between items-center ">
     <div className="flex gap-2 items-center ">
       <input
-        id="comments"
+        id={id}
         name="comments"
         type="checkbox"
         className="h-4 w-4 rounded border-white"

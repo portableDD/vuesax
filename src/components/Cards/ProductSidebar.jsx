@@ -8,6 +8,18 @@ import { useState } from "react";
 const ProductSidebar = () => {
   const { range, catergory, brand } = Navbar;
   const [ranges, setRanges] = useState(1.99);
+  const [radio, setRadio] = useState({
+    10: "",
+    90: "",
+    400: "",
+    500: "",
+    all: "",
+  });
+
+  const handleChange = (e) => {
+    setRadio({ ...radio, [e.target.id]: e.target.value });
+  };
+
   return (
     <div className="hidden w-full lg:w-72 xl:w-[25%] lg:block  ">
       <div className="w-full flex flex-col gap-3.5">
@@ -19,7 +31,13 @@ const ProductSidebar = () => {
             <div className="pt-3 pb-5 text-[13px]">
               {range.map((range, index) => (
                 <div key={index} className="mt-2">
-                  <SingleRange isChecked={range.checked} text={range.text} />
+                  <SingleRange
+                    isChecked={range.checked}
+                    text={range.text}
+                    id={range.id}
+                    handleChnage={handleChange}
+                    value={radio[range.id]}
+                  />
                 </div>
               ))}
             </div>
@@ -64,7 +82,7 @@ const ProductSidebar = () => {
             <div className="pt-3 pb-5 text-[13px]">
               {brand.map((range) => (
                 <div key={range.id} className="mt-2">
-                  <SingleCatergoryBrands title={range.title} num={range.num} />
+                  <SingleCatergoryBrands title={range.title} num={range.num} id={range.id} />
                 </div>
               ))}
             </div>

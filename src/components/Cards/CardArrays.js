@@ -12,23 +12,28 @@ export const Navbar = {
     range: [
         {
             text: '$10',
-            checked: false
+            checked: false,
+            id: 10
         },
         {
             text: '$10-$100',
             checked: false,
+            id: 90
         },
         {
             text: '$100-$500',
             checked: false,
+            id: 400
         },
         {
             text: '$500',
             checked: false,
+            id: 500
         },
         {
             text: 'All',
-            checked: true
+            checked: true,
+            id: 'all'
         },
     ],
     catergory: [

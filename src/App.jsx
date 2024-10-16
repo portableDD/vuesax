@@ -11,7 +11,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import EmailPage from "./pages/EmailPage";
 import ChatPage from "./pages/ChatPage";
 import TodoPage from "./pages/TodoPage";
-import CalenderPage from "./pages/CalenderPage";
+// import CalenderPage from "./pages/CalenderPage";
 import ComingSoonPage from "./pages/ComingSoonPage";
 import CardAction from "./pages/CardAction";
 import Electronics from "./pages/Electronics";
