@@ -1,9 +1,7 @@
 import SingleProductList from "../SingleProductList";
 import { useContext } from "react";
 import AppState from "@/Context/AllContext";
-import { MdAddShoppingCart } from "react-icons/md";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { state, dispatch } = useContext(AppState);

@@ -10,6 +10,8 @@ export const initialState = {
     email: EmailContent,
     cart: [],
     product: Product,
+    discount: 25,
+    tax: 1.3
 }
 
 const AppReducer = (state, action) => {
