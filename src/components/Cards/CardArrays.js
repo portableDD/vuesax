@@ -154,6 +154,7 @@ export const Product = [
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to makea type specimen book.",
         list: true,
         checkout: true,
+        count: 1,
     },
     {
         id: 2,
@@ -166,6 +167,7 @@ export const Product = [
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to makea type specimen book.",
         list: true,
         checkout: true,
+        count: 1,
     },
     {
         id: 3,
@@ -178,6 +180,7 @@ export const Product = [
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to makea type specimen book.",
         list: true,
         checkout: true,
+        count: 1,
     },
     {
         id: 4,
@@ -190,6 +193,7 @@ export const Product = [
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to makea type specimen book.",
         list: true,
         checkout: false,
+        count: 1,
     },
     {
         id: 5,
@@ -202,6 +206,7 @@ export const Product = [
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to makea type specimen book.",
         list: true,
         checkout: false,
+        count: 1,
     },
     {
         id: 6,
@@ -214,6 +219,7 @@ export const Product = [
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to makea type specimen book.",
         list: false,
         checkout: false,
+        count: 1,
     },
     {
         id: 7,
@@ -226,6 +232,7 @@ export const Product = [
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to makea type specimen book.",
         list: false,
         checkout: false,
+        count: 1,
     },
     {
         id: 8,
@@ -238,6 +245,7 @@ export const Product = [
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to makea type specimen book.",
         list: false,
         checkout: false,
+        count: 1,
     },
     {
         id: 9,
@@ -250,5 +258,6 @@ export const Product = [
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to makea type specimen book.",
         list: false,
         checkout: false,
+        count: 1,
     },
 ]

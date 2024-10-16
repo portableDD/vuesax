@@ -4,7 +4,19 @@ import { Link, useLocation } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx";
 import Counter from "./Counter";
 
-const SingleProductList = ({ rating, price, img, title, by, desc }) => {
+const SingleProductList = ({
+  rating,
+  price,
+  img,
+  title,
+  by,
+  desc,
+  remove,
+  id,
+  addToCart,
+  count,
+  handleChange
+}) => {
   const location = useLocation();
 
   const checkLocation = (route) => {
@@ -40,7 +52,7 @@ const SingleProductList = ({ rating, price, img, title, by, desc }) => {
                 <p className="text-[#2DCD7A]">in stock</p>
                 <div>
                   <p>Quantity</p>
-                  <Counter />
+                  <Counter id={id} count={count} handleCountChange={handleChange} />
                 </div>
                 <div>
                   <p className="text-[#999999]">Delivery by, Sat Mar 23</p>
@@ -84,33 +96,44 @@ const SingleProductList = ({ rating, price, img, title, by, desc }) => {
             )}
           </div>
           {/* wishlist */}
-          <button className="w-full py-3 px-3 bg-[#B8C2CC] text-[#2C2C20] text-center rounded-md uppercase text-xs font-medium">
-            {checkLocation("/electronics/list") ? (
+
+          {checkLocation("/electronics/list") ? (
+            <button className="w-full py-3 px-3 bg-[#B8C2CC] text-[#2C2C20] text-center rounded-md uppercase text-xs font-medium">
               <Link to={"/wishlist"}>
                 <FaRegHeart className="inline" />
                 <span className="pl-2">wishlist</span>
               </Link>
-            ) : (
-              <>
-                <RxCross2 className="inline font-semibold" />
-                <span className="pl-2">Remove</span>
-              </>
-            )}
-          </button>
+            </button>
+          ) : (
+            <button
+              className="w-full py-3 px-3 bg-[#B8C2CC] text-[#2C2C20] text-center rounded-md uppercase text-xs font-medium"
+              onClick={() => remove(id)}
+            >
+              <RxCross2 className="inline font-semibold" />
+              <span className="pl-2">Remove</span>
+            </button>
+          )}
+
           {/* add to cart */}
-          <button className="w-full py-3 px-3 bg-[#6F64F8] text-center rounded-md uppercase text-xs font-medium">
-            {checkLocation("/electronics/list") ? (
+
+          {checkLocation("/electronics/list") ? (
+            <button
+              className="w-full py-3 px-3 bg-[#6F64F8] text-center rounded-md uppercase text-xs font-medium"
+              onClick={() => addToCart(id)}
+            >
               <Link to={"/checkout"}>
                 <FiShoppingBag className="inline" />
                 <span className="pl-2">add to cart</span>
               </Link>
-            ) : (
+            </button>
+          ) : (
+            <button className="w-full py-3 px-3 bg-[#6F64F8] text-center rounded-md uppercase text-xs font-medium">
               <Link to={"/wishlist"}>
                 <FaRegHeart className="inline" />
                 <span className="pl-2 text-xs">Move To wishlist</span>
               </Link>
-            )}
-          </button>
+            </button>
+          )}
         </div>
       </div>
     </div>

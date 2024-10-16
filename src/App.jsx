@@ -18,6 +18,8 @@ import Electronics from "./pages/Electronics";
 import CheckoutPage from "./pages/CheckoutPage";
 import ProductGridPage from "./pages/ProductGridPage";
 import ProductListPage from "./pages/ProductListPage";
+import { ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -68,7 +70,12 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+  <>
+    <RouterProvider router={router} />
+    <ToastContainer />
+  </>
+  );
 }
 
 export default App;

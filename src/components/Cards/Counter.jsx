@@ -1,18 +1,21 @@
-import { useState } from "react";
 
-const Counter = () => {
-  const [count, setCount] = useState(8);
+
+const Counter = ({ id, count, handleCountChange }) => {
   const add = () => {
-    const newCount = count < 20 ? count + 1 : count;
-    setCount(newCount);
+    handleCountChange(id, count + 1);
   };
+
   const reduce = () => {
-    const newCount = count > 0 ? count - 1 : count;
-    setCount(newCount);
+    if (count > 1) { // To ensure the count doesn't go below 1
+      handleCountChange(id, count - 1);
+    }
   };
+  
   return (
     <div className="flex items-center mt-1">
-      <button onClick={reduce} className="bg-[#6F64F8] rounded px-2 py-1">-</button>
+      <button onClick={reduce} className="bg-[#6F64F8] rounded px-2 py-1">
+        -
+      </button>
       <h1 className="border border-[#EDEDED] py-0.5 px-2 text-[#2C2C2C] bg-white rounded ">
         {count}
       </h1>

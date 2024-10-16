@@ -2,7 +2,9 @@ import { FaRegStar, FaRegHeart } from "react-icons/fa";
 import { FiShoppingBag } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-const SingleProductGrid = ({ img, rating, price, title, subtitle }) => {
+
+const SingleProductGrid = ({ img, rating, price, title, subtitle, addToCart, id }) => {
+  
   return (
     <div className="w-full bg-contentBgColor rounded-md shadow-navbar ">
       {/* img and detaios div */}
@@ -33,11 +35,10 @@ const SingleProductGrid = ({ img, rating, price, title, subtitle }) => {
             <span className="pl-2">wishlist</span>
           </Link>
         </button>
-        <button className="w-full py-3 px-3 bg-[#6F64F8] text-center rounded-ee-md uppercase text-xs font-medium">
-          <Link to={'/checkout'}>
+        <button className="w-full py-3 px-3 bg-[#6F64F8] text-center rounded-ee-md uppercase text-xs font-medium" onClick={() => addToCart(id)}>
             <FiShoppingBag className="inline" />
             <span className="pl-2">add to cart</span>
-          </Link>
+
         </button>
       </div>
     </div>

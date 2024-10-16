@@ -1,9 +1,13 @@
 import { FiSearch } from "react-icons/fi";
-import { MdOutlineGridView } from "react-icons/md";
+import { MdOutlineGridView, MdOutlineShoppingCart } from "react-icons/md";
 import { BsList } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import AppState from "@/Context/AllContext";
 
 const ProductNavbar = () => {
+  const { state } = useContext(AppState);
+  const { cart } = state;
   return (
     <div className="w-full flex flex-col gap-3">
       <div className="w-full flex justify-between items-end">
@@ -30,6 +34,17 @@ const ProductNavbar = () => {
           >
             <BsList className="text-base" />
           </Link>
+          <Link
+            to={"/checkout"}
+            className="bg-white px-1.5 py-1 rounded-lg shadow-navbar z-10"
+          >
+            <MdOutlineShoppingCart className="text-base" />
+          </Link>
+          {cart.length > 0 && (
+            <div className="flex items-center justify-center text-white font-semibold w-3 h-3 bg-red-500 text-[8px] rounded-full -ml-3 -mt-0.5">
+              {cart.length}
+            </div>
+          )}
         </div>
       </div>
       <div className="relative w-full rounded-md shadow-sm">

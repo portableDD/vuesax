@@ -4,17 +4,23 @@ import Stepper from "@/components/Cards/Checkout/Stepper";
 import Steps3 from "@/components/Cards/Checkout/Steps3";
 import Steps2 from "@/components/Cards/Checkout/Steps2";
 import Step1 from "@/components/Cards/Checkout/Step1";
+import { MdAddShoppingCart } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import AppState from "@/Context/AllContext";
 
 const CheckoutPage = () => {
+  const {state} = useContext(AppState)
+  const {cart} = state
   const [currentStep, setCurrentStep] = useState(1);
 
   const nextStep = () => {
     if (currentStep < 3) setCurrentStep(currentStep + 1);
   };
 
-  const prevStep = () => {
-    if (currentStep > 1) setCurrentStep(currentStep - 1);
-  };
+  // const prevStep = () => {
+  //   if (currentStep > 1) setCurrentStep(currentStep - 1);
+  // };
 
   const goToStep = (step) => {
     setCurrentStep(step);
@@ -23,61 +29,46 @@ const CheckoutPage = () => {
   return (
     <div className="w-full">
       <CardsNavbar big={"Checkout"} small={"Checkout"} />
-      <Stepper currentStep={currentStep} goToStep={goToStep} />
-      <div className="flex flex-col items-center">
-        {/* Step Indicators */}
-        {/* <div className="flex justify-between w-full my-5">
-          <div
-            className={`w-1/3 text-center py-2 rounded-lg ${
-              currentStep >= 1 ? "bg-purple-500 text-white" : "bg-gray-300"
-            }`}
-          >
-            1
-          </div>
-          <div
-            className={`w-1/3 text-center py-2 rounded-lg ${
-              currentStep >= 2 ? "bg-purple-500 text-white" : "bg-gray-300"
-            }`}
-          >
-            2
-          </div>
-          <div
-            className={`w-1/3 text-center py-2 rounded-lg ${
-              currentStep === 3 ? "bg-purple-500 text-white" : "bg-gray-300"
-            }`}
-          >
-            3
-          </div>
-        </div> */}
+      {cart.length === 0 ? (
+        <div className="flex flex-col justify-center items-center gap-3  py-5">
+          <MdAddShoppingCart className="text-9xl" />
+          <h1 className="text-2xl font-semibold">Your Cart is Empty</h1>
+          <p className="w-72 text-center">
+            You have no items in your shopping cart. Let’s go buy something
+          </p>
+          <button className="w-72 py-3 px-3 bg-[#6F64F8] text-center rounded-md uppercase text-xs font-medium">
+            <Link to={"/electronics"}>Continue Shopping</Link>
+          </button>
+        </div>
+      ) : (
+        <>
+          <Stepper currentStep={currentStep} goToStep={goToStep} />
+          <div className="flex flex-col items-center">
+            {/* Conditional Rendering based on Step */}
+            <div className="w-full ">
+              {currentStep === 1 && (
+                <div>
+                  {/* Cart Section */}
+                  <Step1 nextStep={nextStep} />
+                </div>
+              )}
 
-        {/* Conditional Rendering based on Step */}
-        <div className="w-full ">
-          {currentStep === 1 && (
-            <div>
-              {/* Cart Section */}
-              <Step1 nextStep={nextStep} />
-              {/* Add your Cart items here */}
-            </div>
-          )}
+              {currentStep === 2 && (
+                <div>
+                  {/* Address Section */}
+                  <Steps2 nextStep={nextStep} />
+                </div>
+              )}
 
-          {currentStep === 2 && (
-            <div>
-              {/* Address Section */}
-              <Steps2 nextStep={nextStep} />
-              {/* Add your Address form here */}
-            </div>
-          )}
+              {currentStep === 3 && (
+                <div className="py-5">
+                  {/* Payment Section */}
+                  <Steps3 />
+                </div>
+              )}
 
-          {currentStep === 3 && (
-            <div className="py-5">
-              {/* Payment Section */}
-              <Steps3 />
-              {/* Add your Payment options here */}
-            </div>
-          )}
-
-          {/* Navigation Buttons */}
-          {/* <div className="flex justify-between mt-5">
+              {/* Navigation Buttons */}
+              {/* <div className="flex justify-between mt-5">
             {currentStep > 1 && (
               <button
                 onClick={prevStep}
@@ -95,8 +86,10 @@ const CheckoutPage = () => {
               </button>
             )}
           </div> */}
-        </div>
-      </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
