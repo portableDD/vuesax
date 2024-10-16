@@ -15,10 +15,15 @@ const CheckoutPage = () => {
   const prevStep = () => {
     if (currentStep > 1) setCurrentStep(currentStep - 1);
   };
+
+  const goToStep = (step) => {
+    setCurrentStep(step);
+  };
+
   return (
     <div className="w-full">
       <CardsNavbar big={"Checkout"} small={"Checkout"} />
-      <Stepper currentStep={currentStep} />
+      <Stepper currentStep={currentStep} goToStep={goToStep} />
       <div className="flex flex-col items-center">
         {/* Step Indicators */}
         {/* <div className="flex justify-between w-full my-5">
@@ -64,7 +69,7 @@ const CheckoutPage = () => {
           )}
 
           {currentStep === 3 && (
-            <div>
+            <div className="py-5">
               {/* Payment Section */}
               <Steps3 />
               {/* Add your Payment options here */}

@@ -90,11 +90,12 @@ const CartForm = ({ nextStep }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const validateError = validate();
-    setErrors(validateError);
-    nextStep();
-    // if (!validateError) {
-    // } else {
-    // }
+    // Check if there are no errors (i.e., validateError object is empty)
+    if (Object.keys(validateError).length === 0) {
+      nextStep(); // Move to the next step
+    } else {
+      setErrors(validateError); // Set the validation errors
+    }
   };
 
   return (

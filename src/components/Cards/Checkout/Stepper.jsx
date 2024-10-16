@@ -1,28 +1,37 @@
 // Stepper Component - Displays steps in a form wizard
-const Stepper = ({ currentStep }) => {
+const Stepper = ({ currentStep, goToStep }) => {
   return (
     <div className=" relative flex items-center justify-between w-full max-w-4xl mx-auto mt-5 font-semibold overflow-hidden">
       <div
         aria-hidden="true"
-        className="absolute left-4 top-4 mt-0.5 h-1 w-full bg-[#6F64F8]"
+        className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 h-1 bg-[#6F64F8] z-0"
       />
       <div
-        className={`flex items-center justify-center w-10 h-10 rounded-full z-30 ${
-          currentStep >= 1 ? "bg-[#6F64F8] text-white" : "border-2 border-white text-white"
+        onClick={() => goToStep(1)}
+        className={`flex items-center justify-center w-10 h-10 rounded-full z-30 cursor-pointer ${
+          currentStep >= 1
+            ? "bg-[#6F64F8] text-white"
+            : "border-2 border-white text-white "
         }`}
       >
         1
       </div>
       <div
-        className={`flex items-center justify-center w-10 h-10 rounded-full z-30 ${
-          currentStep >= 2 ? "bg-[#6F64F8] text-white" : "border-2 border-white text-white"
+        onClick={() => goToStep(2)}
+        className={`flex items-center justify-center w-10 h-10 rounded-full z-30 cursor-pointer ${
+          currentStep >= 2
+            ? "bg-[#6F64F8] text-white"
+            : "border-2 border-white text-white bg-neutral-content"
         }`}
       >
         2
       </div>
       <div
-        className={`flex items-center justify-center w-10 h-10 rounded-full z-30 ${
-          currentStep === 3 ? "bg-[#6F64F8] text-white" : "border-2 border-white text-white"
+        onClick={() => goToStep(3)}
+        className={`flex items-center justify-center w-10 h-10 rounded-full z-30 cursor-pointer ${
+          currentStep === 3
+            ? "bg-[#6F64F8] text-white"
+            : "border-2 border-white text-white bg-neutral-content"
         }`}
       >
         3
