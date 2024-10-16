@@ -29,7 +29,7 @@ const router = createBrowserRouter(
       <Route path="email" element={<EmailPage />} />
       <Route path="chat" element={<ChatPage />} />
       <Route path="to-do" element={<TodoPage />} />
-      <Route path="calender" element={<CalenderPage />} />
+      <Route path="calender" element={<ComingSoonPage />} />
       {/* ui elements */}
       <Route path="card" element={<CardAction />} />
       {/* electroinics route */}
