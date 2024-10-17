@@ -7,6 +7,7 @@ import { FiTrash } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import AppState from "@/Features/AllContext";
+import { toast } from "react-toastify";
 
 const SearchSelect = () => {
   const { state, dispatch } = useContext(AppState);
@@ -39,6 +40,12 @@ const SearchSelect = () => {
       } 
     }
   }, [text]);
+  
+  const deleteCheckedEmails = () => {
+    const updatedEmailsAfterDelete = email.filter((email) => !email.isChecked);
+    dispatch({ type: "email/removeCheckedEmails", payload: updatedEmailsAfterDelete  });
+    toast.success("Checked emails deleted!");
+  };
 
   const checkLocation = (route) => {
     if (route === location.pathname) {
@@ -79,7 +86,7 @@ const SearchSelect = () => {
             <FaRegFolder />
             <FiTag />
             <MdOutlineEmail />
-            <FiTrash />
+            <FiTrash onClick={deleteCheckedEmails} />
           </div>
         )}
       </div>

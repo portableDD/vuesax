@@ -1,7 +1,7 @@
 import { FaCircle } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 
-const SingleEmail = ({ name, subject, img, color, message, date }) => {
+const SingleEmail = ({ name, subject, img, color, message, date, isChecked, id, handleEmailCheckboxChange }) => {
   return (
     <div className="flex flex-col gap-0.5 ">
       {/* top */}
@@ -32,9 +32,11 @@ const SingleEmail = ({ name, subject, img, color, message, date }) => {
         <div className="flex gap-3 items-center">
           <div className="flex gap-2 items-center">
             <input
-              id="comments"
+              id={id}
               name="comments"
               type="checkbox"
+              checked={isChecked}
+              onChange={() => handleEmailCheckboxChange(id)}
               className="h-4 w-4  rounded border-white"
             />
             <FaRegStar className="text-[#FFA84C]" />

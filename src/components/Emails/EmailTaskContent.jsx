@@ -32,9 +32,18 @@ const EmailTaskContent = () => {
     dispatch({ type: "task/updateTasks", payload: updatedTasks });
   };
 
+  const handleEmailCheckboxChange = (id) => {
+    const updatedEmails = email.map((email) =>
+      email.id === id ? { ...email, isChecked: !email.isChecked } : email
+    );
+    dispatch({ type: "email/updateEmails", payload: updatedEmails });
+  };
+
+ 
+
   return (
     <div>
-      <SearchSelect />
+      <SearchSelect  />
       {checkLocation("/email")
         ? email.map((cont) => (
             <div className="w-full border-style" key={cont.id}>
@@ -45,6 +54,9 @@ const EmailTaskContent = () => {
                 message={cont.message}
                 name={cont.name}
                 subject={cont.subject}
+                id={cont.id}
+                isChecked={cont.isChecked}
+                handleEmailCheckboxChange={handleEmailCheckboxChange}
               />
             </div>
           ))

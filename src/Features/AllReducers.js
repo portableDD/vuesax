@@ -22,7 +22,7 @@ const AppReducer = (state, action) => {
                 ...state,
                 chat: action.payload
             };
-            // cart
+        // cart
         case 'cart/updateCart':
             return {
                 ...state,
@@ -42,7 +42,7 @@ const AppReducer = (state, action) => {
                         : item
                 ),
             }
-            // tasks
+        // tasks
         case 'task/removeTask':
             return {
                 ...state,
@@ -63,7 +63,7 @@ const AppReducer = (state, action) => {
                 ...state,
                 tasks: initialState.tasks // Reset tasks to the original list
             };
-            // email
+        // email
         case "email/searchEmail":
             return {
                 ...state,
@@ -73,6 +73,16 @@ const AppReducer = (state, action) => {
             return {
                 ...state,
                 email: initialState.email // Reset email to the original list
+            };
+        case 'email/updateEmails':
+            return {
+                ...state,
+                email: action.payload,  // Update when it is checked email list with the new array
+            };
+        case 'email/removeCheckedEmails':
+            return {
+                ...state,
+                email: action.payload,  // The payload contains only the unchecked emails after deleteing
             };
         default:
             return state

@@ -92,7 +92,8 @@ export const EmailContent = [
         subject: 'Focused impactful open system',
         message: 'bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine preimaginary saunders demidolmen Chaldaic allusiveness lorriker unworshipping ribaldish tableman hendiadys ',
         color: '#7E72F2',
-        date: '13 Jan'
+        date: '13 Jan',
+        isChecked: false,
     },
     {
         id: 2,
@@ -101,7 +102,8 @@ export const EmailContent = [
         subject: 'Focused impactful open system',
         message: 'bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine preimaginary saunders demidolmen Chaldaic allusiveness lorriker unworshipping ribaldish tableman hendiadys ',
         color: '#7E72F2',
-        date: '07 Jan'
+        date: '07 Jan',
+        isChecked: false,
     },
     {
         id: 3,
@@ -110,7 +112,8 @@ export const EmailContent = [
         subject: 'Focused impactful open system',
         message: 'bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine preimaginary saunders demidolmen Chaldaic allusiveness lorriker unworshipping ribaldish tableman hendiadys ',
         color: '#7E72F2',
-        date: '01 Jan'
+        date: '01 Jan',
+        isChecked: false,
     },
     {
         id: 4,
@@ -119,7 +122,8 @@ export const EmailContent = [
         subject: 'Focused impactful open system',
         message: 'bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine preimaginary saunders demidolmen Chaldaic allusiveness lorriker unworshipping ribaldish tableman hendiadys ',
         color: '#2DCD7A',
-        date: '15 Dec'
+        date: '15 Dec',
+        isChecked: false,
     },
     {
         id: 5,
@@ -128,7 +132,8 @@ export const EmailContent = [
         subject: 'Focused impactful open system',
         message: 'bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine preimaginary saunders demidolmen Chaldaic allusiveness lorriker unworshipping ribaldish tableman hendiadys ',
         color: '#ED5F5F',
-        date: '11 Dec'
+        date: '11 Dec',
+        isChecked: false,
     },
     {
         id: 6,
@@ -137,7 +142,8 @@ export const EmailContent = [
         subject: 'Focused impactful open system',
         message: 'bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine preimaginary saunders demidolmen Chaldaic allusiveness lorriker unworshipping ribaldish tableman hendiadys ',
         color: '#7E72F2',
-        date: '10 Dec'
+        date: '10 Dec',
+        isChecked: false,
     },
     {
         id: 7,
@@ -146,7 +152,8 @@ export const EmailContent = [
         subject: 'Focused impactful open system',
         message: 'bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine preimaginary saunders demidolmen Chaldaic allusiveness lorriker unworshipping ribaldish tableman hendiadys ',
         color: '#7E72F2',
-        date: '05 Dec'
+        date: '05 Dec',
+        isChecked: false,
     },
     {
         id: 8,
@@ -155,7 +162,8 @@ export const EmailContent = [
         subject: 'Focused impactful open system',
         message: 'bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine preimaginary saunders demidolmen Chaldaic allusiveness lorriker unworshipping ribaldish tableman hendiadys ',
         color: '#FFA84C',
-        date: '03 Dec'
+        date: '03 Dec',
+        isChecked: false,
     },
 ]
 
