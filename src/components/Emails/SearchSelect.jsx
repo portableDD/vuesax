@@ -4,10 +4,41 @@ import { FaRegFolder } from "react-icons/fa6";
 import { FiTag } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import { FiTrash } from "react-icons/fi";
-
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+import AppState from "@/Features/AllContext";
 
 const SearchSelect = () => {
+  const { state, dispatch } = useContext(AppState);
+  const { tasks, email } = state;
   const location = useLocation();
+  const [text, setText] = useState("");
+
+  const onChangeText = (e) => {
+    setText(e.target.value);
+  };
+
+  useEffect(() => {
+    if (checkLocation("/email")) {
+      if (text !== "") {
+        const newFindEmail = email.filter((email) =>
+          email.name.toLowerCase().includes(text.toLowerCase())
+        );
+        dispatch({ type: "email/searchEmail", payload: newFindEmail });
+      } else {
+        dispatch({ type: "email/resetEmail" }); 
+      }
+    }else {
+      if (text !== '') {
+        const newFindTasks = tasks.filter((task) => 
+          task.subject.toLowerCase().includes(text.toLowerCase())
+        );
+        dispatch({ type: "task/searchTasks", payload: newFindTasks });
+      }else {
+        dispatch({ type: "task/resetTasks" }); 
+      } 
+    }
+  }, [text]);
 
   const checkLocation = (route) => {
     if (route === location.pathname) {
@@ -24,6 +55,8 @@ const SearchSelect = () => {
           type="text"
           name="text"
           id="text"
+          value={text}
+          onChange={onChangeText}
           className="bg-inherit w-full rounded-full outline-none py-1.5 pl-10 px-2  placeholder:text-[13px]  placeholder:text-white  sm:text-sm"
           placeholder="Search Mail"
         />

@@ -1,6 +1,6 @@
 import SingleProductList from "../SingleProductList";
 import { useContext } from "react";
-import AppState from "@/Context/AllContext";
+import AppState from "@/Features/AllContext";
 import { toast } from "react-toastify";
 
 const Cart = () => {
@@ -10,10 +10,9 @@ const Cart = () => {
   const deleteFeedback = (id) => {
     if (window.confirm("Are you sure you want to delete??")) {
       const newfeed = cart.filter((item) => item.id !== id);
-      console.log(newfeed);
       dispatch({ type: "cart/removeCart", payload: newfeed });
     }
-    toast.success("Product is Successfully Remove");
+    toast.success("Product Remove!!");
   };
 
   const handleCountChange = (id, newCount) => {

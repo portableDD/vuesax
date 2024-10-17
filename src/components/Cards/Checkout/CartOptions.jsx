@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import AppState from "@/Context/AllContext";
-const CartOptions = ({next}) => {
+import AppState from "@/Features/AllContext";
+const CartOptions = ({ next }) => {
   const { state } = useContext(AppState);
   const { cart } = state;
 
@@ -8,17 +8,15 @@ const CartOptions = ({next}) => {
   const [tax] = useState(1.3);
 
   const totalProductPrice = cart.reduce((acc, item) => {
-    return acc += item.price *item.count
-  }, 0)
+    return (acc += item.price * item.count);
+  }, 0);
 
-  const total = totalProductPrice - discount + tax
+  const total = totalProductPrice - discount + tax;
 
   useEffect(() => {
     // Recalculate total on count change
-    
   }, [totalProductPrice, total]);
-  
-  
+
   return (
     <div className="flex flex-col justify-between h-full">
       <div className="border-b border-[#E4E4E4] py-3 w-full">
@@ -52,12 +50,15 @@ const CartOptions = ({next}) => {
         </p>
       </div>
       <div className="w-full">
-        <p className="flex justify-between text-[13px] text-[#665e5e] pt-0.5 font-semibold">
+        <p className="flex justify-between text-[13px]  pt-0.5 font-semibold">
           <span>Total</span>
           <span>${total}</span>
         </p>
-        <button className="w-full py-2 bg-[#6F64F8] rounded-md mt-3 font-semibold" onClick={next}>
-            Place Order
+        <button
+          className="w-full py-2 bg-[#6F64F8] rounded-md mt-3 font-semibold"
+          onClick={next}
+        >
+          Place Order
         </button>
       </div>
     </div>

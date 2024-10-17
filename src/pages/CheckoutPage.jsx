@@ -7,11 +7,11 @@ import Step1 from "@/components/Cards/Checkout/Step1";
 import { MdAddShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import AppState from "@/Context/AllContext";
+import AppState from "@/Features/AllContext";
 
 const CheckoutPage = () => {
-  const {state} = useContext(AppState)
-  const {cart} = state
+  const { state } = useContext(AppState);
+  const { cart } = state;
   const [currentStep, setCurrentStep] = useState(1);
 
   const nextStep = () => {

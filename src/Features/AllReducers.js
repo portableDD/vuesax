@@ -16,11 +16,13 @@ export const initialState = {
 
 const AppReducer = (state, action) => {
     switch (action.type) {
+        // chat
         case 'chat/updateChat':
             return {
                 ...state,
                 chat: action.payload
             };
+            // cart
         case 'cart/updateCart':
             return {
                 ...state,
@@ -40,6 +42,38 @@ const AppReducer = (state, action) => {
                         : item
                 ),
             }
+            // tasks
+        case 'task/removeTask':
+            return {
+                ...state,
+                tasks: action.payload
+            };
+        case "task/updateTasks":
+            return {
+                ...state,
+                tasks: action.payload, // Updating tasks with the new task list
+            };
+        case "task/searchTasks":
+            return {
+                ...state,
+                tasks: action.payload,
+            };
+        case "task/resetTasks":
+            return {
+                ...state,
+                tasks: initialState.tasks // Reset tasks to the original list
+            };
+            // email
+        case "email/searchEmail":
+            return {
+                ...state,
+                email: action.payload,
+            };
+        case "email/resetEmail":
+            return {
+                ...state,
+                email: initialState.email // Reset email to the original list
+            };
         default:
             return state
     }

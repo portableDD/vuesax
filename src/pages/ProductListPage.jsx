@@ -1,6 +1,6 @@
 import SingleProductList from "@/components/Cards/SingleProductList";
 import { useContext } from "react";
-import AppState from "@/Context/AllContext";
+import AppState from "@/Features/AllContext";
 import { toast } from "react-toastify";
 
 const ProductListPage = () => {

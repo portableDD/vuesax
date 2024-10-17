@@ -1,6 +1,6 @@
 import SingleProductGrid from "@/components/Cards/SingleProductGrid";
 import { useContext } from "react";
-import AppState from "@/Context/AllContext";
+import AppState from "@/Features/AllContext";
 import { toast } from "react-toastify";
 
 const ProductGridPage = () => {

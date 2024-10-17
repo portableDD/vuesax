@@ -3,7 +3,7 @@ import { MdOutlineGridView, MdOutlineShoppingCart } from "react-icons/md";
 import { BsList } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import AppState from "@/Context/AllContext";
+import AppState from "@/Features/AllContext";
 
 const ProductNavbar = () => {
   const { state } = useContext(AppState);
