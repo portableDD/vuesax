@@ -8,7 +8,7 @@ const RevenueGoal = () => {
     <div className="w-full">
       <div className="flex flex-col lg:flex-row gap-5">
         <div className="w-full lg:w-4/5 xl:w-[70%]">
-          <div className="bg-contentBgColor rounded-md py-3 px-3">
+          <div className="bg-neutral-100 dark:bg-contentBgColor rounded-md py-3 px-3">
             <div className="flex justify-between items-center">
               <p className="font-semibold">Revenue</p>
               <FiSettings />
@@ -16,7 +16,7 @@ const RevenueGoal = () => {
             <LineChartComp />
           </div>
         </div>
-        <div className="bg-contentBgColor rounded-md w-full lg:w-96 xl:w-[30%] py-3 px-3">
+        <div className="bg-neutral-100 dark:bg-contentBgColor rounded-md w-full lg:w-96 xl:w-[30%] py-3 px-3">
           <div className="flex justify-between items-center">
             <p className="font-semibold">Goal Overview</p>
             <MdOutlineInfo />

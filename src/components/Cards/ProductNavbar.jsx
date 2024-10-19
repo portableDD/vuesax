@@ -55,7 +55,7 @@ const ProductNavbar = () => {
           type="text"
           name="text"
           id="text"
-          className="bg-contentBgColor w-full rounded-md  outline-none py-2 pr-10 px-2 shadow-navbar placeholder:text-xs  placeholder:text-[#999999]  sm:text-sm"
+          className="bg-neutral-100 dark:bg-contentBgColor w-full rounded-md  outline-none py-2 pr-10 px-2 shadow-navbar placeholder:text-xs  placeholder:text-[#999999]  sm:text-sm"
           placeholder="Search Here"
         />
       </div>

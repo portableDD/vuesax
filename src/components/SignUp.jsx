@@ -5,8 +5,8 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { doc, setDoc, serverTimestamp } from "firebase/firestore";
-import { db } from "@/firebase.config";
+// import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+// import { db } from "@/firebase.config";
 import { toast } from "react-toastify";
 import Logo from "../assets/img/logo.svg";
 import GoogleAuth from "./Auths/GoogleAuth";
@@ -21,6 +21,7 @@ const SignUp = () => {
   });
   const { fullName, email, password } = formData;
   const [error, setError] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -39,7 +40,7 @@ const SignUp = () => {
     if (!formData.fullName === "") {
       newError.fullName = "Full Name is required";
     }
-    if (formData.fullName.length <=3) {
+    if (formData.fullName.length <= 3) {
       newError.fullName = "Full Name length must be more than 3";
     }
     // } else if (/[A-Za-z/s]/.test(formData.fullName)) {
@@ -47,7 +48,7 @@ const SignUp = () => {
     // }
     if (!formData.email === "") {
       newError.email = "Email is required";
-    } 
+    }
     if (formData.email.length <= 4) {
       newError.email = "Email length should be more than 4";
     }
@@ -56,7 +57,7 @@ const SignUp = () => {
     }
     if (!formData.password === "") {
       newError.password = "Password is required";
-    } 
+    }
     if (formData.password.length <= 5) {
       newError.password =
         "Password must be more than 5 and it must consist of uppercase, lowercase, numbers and a special character";
@@ -68,28 +69,26 @@ const SignUp = () => {
     e.preventDefault();
     const validateError = validate();
     if (Object.keys(validateError).length === 0) {
+      setLoading(true);
       try {
         const auth = getAuth();
-        const userCredential = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        const user = userCredential.user;
-        console.log(user);
-        updateProfile(auth.currentUser, { displayName: fullName });
+        await createUserWithEmailAndPassword(auth, email, password);
+        // const userCredential =
+        // const user = userCredential.user;
+        await updateProfile(auth.currentUser, { displayName: fullName });
 
-        const formDataCopy = { ...formData };
-        delete formDataCopy.password;
-        formDataCopy.timeStamp = serverTimestamp();
+        // const formDataCopy = { ...formData };
+        // delete formDataCopy.password;
+        // formDataCopy.timeStamp = serverTimestamp();
 
-        await setDoc(doc(db, "users", user.uid), formDataCopy);
+        // await setDoc(doc(db, "users", user.uid), formDataCopy);
         toast.success("successfully sign up");
         navigate("/");
       } catch (error) {
         const errorMessage = error.message;
-        console.log(errorMessage)
         toast.error(errorMessage);
+      } finally {
+        setLoading(false); // Set loading to false once done
       }
     } else {
       setError(validateError);
@@ -197,9 +196,12 @@ const SignUp = () => {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-logoColor py-1.5 font-semibold leading-6 shadow-sm hover:bg-indigo-500"
+                disabled={loading} // Disable the button while loading
+                className={`flex w-full justify-center rounded-md bg-logoColor py-2 font-semibold leading-6 shadow-sm hover:bg-indigo-500 ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
-                Sign Up
+                {loading ? "Signing up..." : "Sign Up"}
               </button>
             </div>
           </form>

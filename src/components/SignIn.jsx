@@ -14,7 +14,8 @@ const SignIn = () => {
     password: "",
   });
   const { email, password } = formData;
-  
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
   const onChange = (e) => {
     setFormData((prev) => {
@@ -27,6 +28,7 @@ const SignIn = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const auth = getAuth();
       const userCredential = await signInWithEmailAndPassword(
@@ -42,6 +44,8 @@ const SignIn = () => {
     } catch (error) {
       const errorMessage = error.message;
       toast.error(errorMessage);
+    } finally {
+      setLoading(false); // Reset loading state after login attempt
     }
   };
   return (
@@ -104,7 +108,10 @@ const SignIn = () => {
                 autoComplete="current-password"
                 className="block bg-transparent w-[85%] outline-none"
               />
-              <div onClick={() => setShowPassword((prev) => !prev)} className="cursor-pointer">
+              <div
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="cursor-pointer"
+              >
                 {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
               </div>
             </div>
@@ -113,9 +120,12 @@ const SignIn = () => {
           <div>
             <button
               type="submit"
-              className="w-full rounded-md bg-logoColor py-1.5 font-semibold shadow-sm hover:bg-indigo-400"
+              className={`w-full rounded-md bg-logoColor py-1.5 font-semibold shadow-sm hover:bg-indigo-400 ${
+                loading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              disabled={loading} // Disable button when loading
             >
-              Sign in
+              {loading ? "Signing in..." : "Sign in"}
             </button>
           </div>
         </form>

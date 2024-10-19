@@ -24,7 +24,7 @@ const ProductSidebar = () => {
     <div className="hidden w-full lg:w-72 xl:w-[25%] lg:block  ">
       <div className="w-full flex flex-col gap-3.5">
         <p className="text-[13px] font-semibold mt-1">Filters</p>
-        <div className="px-6 py-3 bg-contentBgColor rounded-md flex flex-col gap-3 ">
+        <div className="px-6 py-3 bg-neutral-100 dark:bg-contentBgColor  rounded-md flex flex-col gap-3 ">
           {/* range */}
           <div className="border-b border-[#D6D6D6] ">
             <p className="font-semibold">Multi Range</p>

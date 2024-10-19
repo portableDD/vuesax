@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const SingleProductGrid = ({ img, rating, price, title, subtitle, addToCart, id }) => {
   
   return (
-    <div className="w-full bg-contentBgColor rounded-md shadow-navbar ">
+    <div className="w-full bg-neutral-100 dark:bg-contentBgColor rounded-md shadow-navbar ">
       {/* img and detaios div */}
       <div className="py-3 px-3">
         {/* img */}

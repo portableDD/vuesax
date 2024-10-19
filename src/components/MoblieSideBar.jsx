@@ -59,7 +59,7 @@ const MoblieSideBar = () => {
     setOpenCard(!openCard);
     setOtherMenu(false);
     setOpen(false);
-    navigate("/card");
+    navigate("/layouts/card");
   };
 
   const location = useLocation();

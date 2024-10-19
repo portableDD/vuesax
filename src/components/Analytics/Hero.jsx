@@ -104,7 +104,7 @@ const Hero = () => {
         </div>
       </div>
       {/* subscriber card */}
-      <div className="bg-contentBgColor rounded-md">
+      <div className="bg-neutral-100 dark:bg-contentBgColor rounded-md">
         <AreaChartComp
           id="colorUv"
           data={Subscribers}
@@ -120,7 +120,7 @@ const Hero = () => {
         />
       </div>
       {/* order card */}
-      <div className="bg-contentBgColor rounded-md">
+      <div className="bg-neutral-100 dark:bg-contentBgColor rounded-md">
         <AreaChartComp
           id="colorOrder"
           data={Order}

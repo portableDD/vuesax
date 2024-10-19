@@ -8,7 +8,7 @@ const StatisticClient = () => {
     <div className="w-full">
       <div className="flex flex-col lg:flex-row gap-5">
         <div className=" w-full lg:w-96 xl:w-[30%]">
-          <div className="bg-contentBgColor rounded-md py-3 px-3">
+          <div className="bg-neutral-100 dark:bg-contentBgColor rounded-md py-3 px-3">
             <p className="font-semibold">Browser Statistics</p>
             <div className="w-full py-3 mt-3">
               <div className="flex flex-col justify-between gap-6 w-full">
@@ -81,7 +81,7 @@ const StatisticClient = () => {
           </div>
         </div>
         <div className="w-full lg:w-4/5 xl:w-[70%]">
-          <div className="bg-contentBgColor rounded-md py-3 px-3">
+          <div className="bg-neutral-100 dark:bg-contentBgColor rounded-md py-3 px-3">
             <p className="font-semibold">Client Retention</p>
             <StackedBar />
           </div>

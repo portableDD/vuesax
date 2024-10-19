@@ -8,7 +8,7 @@ import AppState from "@/Features/AllContext";
 
 const EmailTaskContent = () => {
   const { state, dispatch } = useContext(AppState);
-  const { tasks, email } = state;
+  const { email, tasks } = state;
   const location = useLocation();
 
   const checkLocation = (route) => {

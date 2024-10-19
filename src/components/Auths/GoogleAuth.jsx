@@ -28,7 +28,7 @@ const GoogleAuth = () => {
         });
       }
       toast.success("Welcome Back");
-      navigate("/");
+      navigate("/layouts");
     } catch (error) {
       const errorMessage = error.message;
       toast.error(errorMessage);

@@ -2,27 +2,17 @@ import { Product } from "@/components/Cards/CardArrays"
 import { Message } from "@/components/Chats/ChatArrays"
 import { EmailContent, TaskContent } from "@/components/Emails/EmailTaskArrays"
 
-
-
 export const initialState = {
-    users: [],
     chat: Message,
     tasks: TaskContent,
     email: EmailContent,
     cart: [],
     product: Product,
-    discount: 25,
-    tax: 1.3
+    darkMode: true
 }
 
 const AppReducer = (state, action) => {
     switch (action.type) {
-        // users
-        case 'user/updateUsers':
-            return {
-                ...state,
-                users: action.payload
-            };
         // chat
         case 'chat/updateChat':
             return {
@@ -91,8 +81,12 @@ const AppReducer = (state, action) => {
                 ...state,
                 email: action.payload,  // The payload contains only the unchecked emails after deleteing
             };
+        case "TOGGLE_THEME":
+            return { ...state, darkMode: !state.darkMode };
+        case "SET_THEME":
+            return { ...state, darkMode: action.payload };
         default:
-            return state
+            return state;
     }
 }
 

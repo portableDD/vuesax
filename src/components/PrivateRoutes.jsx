@@ -1,16 +1,19 @@
-import { Navigate, Outlet} from "react-router-dom"
+import { Navigate, Outlet } from "react-router-dom";
 import UseAuthStatus from "../hooks/UseAuthStatus";
+import Spinner from "./Spinner";
 
 const PrivateRoutes = () => {
-    const {loggedIn, checkStatus} = UseAuthStatus()
+  const { loggedIn, checkStatus } = UseAuthStatus();
 
-    if(checkStatus){
-        return <h3>loading ......</h3>
-    }
+  if (checkStatus) {
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-mainBgColor text-white">
+        <Spinner />
+      </div>
+    );
+  }
 
-  return (
-    <div>{loggedIn ? <Outlet /> : <Navigate to={'/'} /> }</div>
-  )
-}
+  return <div>{loggedIn ? <Outlet /> : <Navigate to={"/"} />}</div>;
+};
 
-export default PrivateRoutes
+export default PrivateRoutes;

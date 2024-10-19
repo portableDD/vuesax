@@ -84,7 +84,7 @@ const MiddleSessionAndTicket = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
       <div className="shadow-navbar ">
-        <div className="bg-contentBgColor shadow-navbar rounded-md px-4 py-2">
+        <div className="bg-neutral-100 dark:bg-contentBgColor shadow-navbar rounded-md px-4 py-2">
           {/* select and avg sessions */}
           <div className="flex justify-between">
             <div>
@@ -95,7 +95,7 @@ const MiddleSessionAndTicket = () => {
             <select
               name="select"
               id="select"
-              className="bg-contentBgColor h-5 text-xs outline-none "
+              className="bg-neutral-100 dark:bg-contentBgColor h-5 text-xs outline-none "
             >
               <option value="seven">Last 7 days</option>
               <option value="fourteen">Last 14 days</option>
@@ -166,7 +166,7 @@ const MiddleSessionAndTicket = () => {
           </div>
         </div>
       </div>
-      <div className="bg-contentBgColor shadow-navbar rounded-md px-4 py-2">
+      <div className="bg-neutral-100 dark:bg-contentBgColor shadow-navbar rounded-md px-4 py-2">
         {/* select and session */}
         <div className="flex justify-between">
           <div>
@@ -179,7 +179,7 @@ const MiddleSessionAndTicket = () => {
           <select
             name="select"
             id="select"
-            className="bg-contentBgColor h-5 text-xs outline-none "
+            className="bg-neutral-100 dark:bg-contentBgColor h-5 text-xs outline-none "
           >
             <option value="seven">Last 7 days</option>
             <option value="fourteen">Last 14 days</option>

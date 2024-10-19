@@ -25,7 +25,7 @@ const SingleProductList = ({
     }
   };
   return (
-    <div className="w-full bg-contentBgColor rounded-md shadow-navbar">
+    <div className="w-full bg-neutral-100 dark:bg-contentBgColor rounded-md shadow-navbar">
       <div className="flex flex-col lg:flex-row justify-between">
         {/* img and desc */}
         <div

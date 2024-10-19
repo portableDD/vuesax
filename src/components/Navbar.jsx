@@ -17,11 +17,22 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import MoblieSideBar from "./MoblieSideBar";
+import { useContext } from "react";
+import AppState from "@/Features/AllContext";
+import { MdDarkMode } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
+
 
 const Navbar = () => {
+  const { state, dispatch } = useContext(AppState);
+  const {darkMode} = state
+
+  const toggleTheme = () => {
+    dispatch({ type: "TOGGLE_THEME" });
+  };
 
   return (
-    <nav className="max-w-[95%] lg:max-w-[75%] xl:max-w-[80%] w-full bg-contentBgColor rounded-md fixed z-50">
+    <nav className="max-w-[95%] lg:max-w-[75%] xl:max-w-[80%] w-full bg-white dark:bg-contentBgColor rounded-md fixed z-50">
       <div className="shadow-navbar py-0.5 px-2 flex justify-between items-center">
         {/* icon div */}
         <div className="flex gap-2 md:gap-3 items-center text-base ">
@@ -44,6 +55,12 @@ const Navbar = () => {
         {/* profile div */}
         <div className="flex gap-2 md:gap-4 items-center ">
           <div className="flex gap-2 md:gap-4 items-center">
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-black dark:text-white rounded-md"
+            >
+              {darkMode ? <MdDarkMode /> : <CiLight />}
+            </button>
             <span className="hidden lg:block text-xs">English</span>
             <GoBell />
             <FiSearch />
@@ -70,7 +87,7 @@ const Navbar = () => {
                   </SheetDescription>
                 </SheetHeader>
                 <div>
-                 <MoblieSideBar />
+                  <MoblieSideBar />
                 </div>
               </SheetContent>
             </Sheet>

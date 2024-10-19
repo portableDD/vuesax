@@ -13,10 +13,10 @@ const PrdouctFooter = () => {
       <div></div>
       {/* pagination */}
       <div className="flex gap-1 md:gap-3 items-center justify-center">
-        <button className="bg-contentBgColor px-[2px] rounded-full w-8 h-8 disabled:text-gray-200 flex justify-center items-center">
+        <button className="bg-neutral-100 dark:bg-contentBgColor  px-[2px] rounded-full w-8 h-8 disabled:text-gray-200 flex justify-center items-center">
           <FaAngleLeft className="text-base" />
         </button>
-        <div className="font-semibold bg-contentBgColor flex gap-3 items-center rounded-full px-3 py-0.5">
+        <div className="font-semibold bg-neutral-100 dark:bg-contentBgColor  flex gap-3 items-center rounded-full px-3 py-0.5">
           <NavLink to={"/testing"} className={linkPage}>
             1
           </NavLink>
@@ -48,7 +48,7 @@ const PrdouctFooter = () => {
             10
           </NavLink>
         </div>
-        <button className="bg-contentBgColor px-1 rounded-full w-8 h-8 disabled:text-gray-200 flex justify-center items-center">
+        <button className="bg-neutral-100 dark:bg-contentBgColor  px-1 rounded-full w-8 h-8 disabled:text-gray-200 flex justify-center items-center">
           <FaAngleRight className="text-base" />
         </button>
       </div>

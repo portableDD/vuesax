@@ -13,7 +13,7 @@ const Hero = () => {
     <div className="w-full">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {/* first chart */}
-        <div className="bg-contentBgColor rounded-md">
+        <div className="bg-neutral-100 dark:bg-contentBgColor rounded-md">
           <AreaChartComp
             id="colorUv"
             data={Subscribers}
@@ -29,7 +29,7 @@ const Hero = () => {
           />
         </div>
         {/* second chart */}
-        <div className="bg-contentBgColor rounded-md">
+        <div className="bg-neutral-100 dark:bg-contentBgColor rounded-md">
           <AreaChartComp
             id="colorReve"
             data={revenue}
@@ -45,7 +45,7 @@ const Hero = () => {
           />
         </div>
         {/* third chat */}
-        <div className="bg-contentBgColor rounded-md">
+        <div className="bg-neutral-100 dark:bg-contentBgColor rounded-md">
           <AreaChartComp
             id="colorQur"
             data={quarterly}
@@ -61,7 +61,7 @@ const Hero = () => {
           />
         </div>
         {/* fourth chart */}
-        <div className="bg-contentBgColor rounded-md">
+        <div className="bg-neutral-100 dark:bg-contentBgColor rounded-md">
           <AreaChartComp
             id="colorOrder"
             data={Order}

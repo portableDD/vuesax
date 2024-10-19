@@ -7,7 +7,7 @@ const Step1 = ({nextStep}) => {
         <div className="xl:max-w-[70%] w-full">
           <Cart />
         </div>
-        <div className="rounded-md shadow-navbar bg-contentBgColor py-3 px-3 w-full xl:max-w-[30%] h-80 mt-3">
+        <div className="rounded-md shadow-navbar bg-neutral-100 dark:bg-contentBgColor py-3 px-3 w-full xl:max-w-[30%] h-80 mt-3">
           <CartOptions next={nextStep} />
         </div>
       </div>

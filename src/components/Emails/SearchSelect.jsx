@@ -81,7 +81,7 @@ const SearchSelect = () => {
             Select All
           </p>
         </div>
-        {checkLocation("/email") && (
+        {checkLocation("/layouts/email") && (
           <div className="flex items-center gap-3 text-base">
             <FaRegFolder />
             <FiTag />

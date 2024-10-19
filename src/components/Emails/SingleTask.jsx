@@ -19,7 +19,7 @@ const SingleTask = ({ subject, isSpan, spanText, color, message, isChecked, dele
           <p id="comments-description" className="flex flex-col sm:flex-row gap-3 sm:gap-6 sm:items-center">
             <span className="font-semibold">{subject}</span>
             {isSpan && (
-              <span className="bg-[#0F1642] rounded-xl flex gap-2 items-center py-1 px-4 text-xs">
+              <span className="bg-neutral-100  dark:bg-[#0F1642] rounded-xl flex gap-2 items-center py-1 px-4 text-xs">
                 <FaCircle className={`text-[${color}] inline`} />
                 {spanText}
               </span>

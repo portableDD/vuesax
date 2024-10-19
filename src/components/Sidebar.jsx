@@ -75,7 +75,7 @@ const Sidebar = () => {
       : "hover:bg-indigo-900 hover:text-white rounded-md px-3 py-2";
 
   return (
-    <div className="hidden lg:block px-3 py-3 shadow-sidebar scroll-smooth h-screen fixed top-0 left-0 bg-contentBgColor w-56">
+    <div className="hidden lg:block px-3 py-3 shadow-sidebar scroll-smooth h-screen fixed top-0 left-0 bg-white dark:bg-contentBgColor w-56">
       <div className="flex flex-col gap-2 font-semibold overflow-y-scroll relative h-full">
         {/* logo, name and icon div */}
         <div className="flex justify-between items-center">
