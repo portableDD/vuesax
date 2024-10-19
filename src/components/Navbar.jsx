@@ -25,16 +25,16 @@ const Navbar = () => {
       <div className="shadow-navbar py-0.5 px-2 flex justify-between items-center">
         {/* icon div */}
         <div className="flex gap-2 md:gap-3 items-center text-base ">
-          <Link to="/to-do">
+          <Link to="/layouts/to-do">
             <FiCheckSquare />
           </Link>
-          <Link to="/chat">
+          <Link to="/layouts/chat">
             <MdChatBubbleOutline />
           </Link>
-          <Link to="/email">
+          <Link to="/layouts/email">
             <MdOutlineEmail />
           </Link>
-          <Link to="/calendar">
+          <Link to="/layouts/calendar">
             <MdOutlineCalendarToday />
           </Link>
           <Link>

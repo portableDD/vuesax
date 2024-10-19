@@ -5,6 +5,7 @@ import { EmailContent, TaskContent } from "@/components/Emails/EmailTaskArrays"
 
 
 export const initialState = {
+    users: [],
     chat: Message,
     tasks: TaskContent,
     email: EmailContent,
@@ -16,6 +17,12 @@ export const initialState = {
 
 const AppReducer = (state, action) => {
     switch (action.type) {
+        // users
+        case 'user/updateUsers':
+            return {
+                ...state,
+                users: action.payload
+            };
         // chat
         case 'chat/updateChat':
             return {

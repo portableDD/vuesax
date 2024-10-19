@@ -5,6 +5,7 @@ const AppState = createContext()
 
 export const AppStateProvider = ({children}) => {
     const [state, dispatch] = useReducer(AppReducer,initialState)
+
     const totalProductPrice = initialState.cart.reduce((acc, item) => {
         return acc += item.price *item.count
       }, 0)

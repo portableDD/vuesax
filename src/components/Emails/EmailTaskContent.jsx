@@ -7,8 +7,8 @@ import { useContext } from "react";
 import AppState from "@/Features/AllContext";
 
 const EmailTaskContent = () => {
-  const {state, dispatch} = useContext(AppState)
-  const {tasks, email} = state
+  const { state, dispatch } = useContext(AppState);
+  const { tasks, email } = state;
   const location = useLocation();
 
   const checkLocation = (route) => {
@@ -20,7 +20,7 @@ const EmailTaskContent = () => {
   const deleteFeedback = (id) => {
     if (window.confirm("Are you sure you want to delete??")) {
       const newfeed = tasks.filter((item) => item.id !== id);
-      dispatch({ type: 'task/removeTask', payload: newfeed });
+      dispatch({ type: "task/removeTask", payload: newfeed });
     }
     toast.success("Task Deleted!!");
   };
@@ -39,12 +39,10 @@ const EmailTaskContent = () => {
     dispatch({ type: "email/updateEmails", payload: updatedEmails });
   };
 
- 
-
   return (
     <div>
-      <SearchSelect  />
-      {checkLocation("/email")
+      <SearchSelect />
+      {checkLocation("/layouts/email")
         ? email.map((cont) => (
             <div className="w-full border-style" key={cont.id}>
               <SingleEmail

@@ -18,15 +18,15 @@ const EmailTaskNavbar = () => {
       {/* button and all for todo */}
       <div
         className={
-          checkLocation("/to-do")
+          checkLocation("/layouts/to-do")
             ? "px-3 py-3 border-b border-[#EBEBEB66]"
             : "px-3 py-3"
         }
       >
         <button className="bg-logoColor w-full py-2 rounded-md text-base font-semibold">
-          {checkLocation("/email") ? "Compose" : "Add Task"}
+          {checkLocation("/layouts/email") ? "Compose" : "Add Task"}
         </button>
-        {checkLocation("/to-do") && (
+        {checkLocation("/layouts/to-do") && (
           <div className="mt-3">
             <MdOutlineEmail className="inline text-lg" />
             <span className="pl-2 align-middle">All</span>
@@ -35,7 +35,7 @@ const EmailTaskNavbar = () => {
       </div>
       {/* nav items */}
       <div className="border-b border-[#EBEBEB66] px-3 py-3 -mt-3">
-        {checkLocation("/email")
+        {checkLocation("/layouts/email")
           ? Email.map((email) => (
               <div key={email.text} className="">
                 <div className="mt-3">

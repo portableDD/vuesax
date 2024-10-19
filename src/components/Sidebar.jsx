@@ -58,7 +58,7 @@ const Sidebar = () => {
     setOpenCard(!openCard);
     setOtherMenu(false);
     setOpen(false)
-    navigate('/card')
+    navigate('/layouts/card')
   };
 
   const location = useLocation();
@@ -80,7 +80,7 @@ const Sidebar = () => {
         {/* logo, name and icon div */}
         <div className="flex justify-between items-center">
           {/* logo and name */}
-          <NavLink className="flex gap-2 items-center">
+          <NavLink className="flex gap-2 items-center" to={'/layouts'}>
             <img src={Logo} alt="logo img" />
             <span className="text-logoColor text-lg ">Vuesax</span>
           </NavLink>
@@ -102,11 +102,11 @@ const Sidebar = () => {
           </div>
           {open && (
             <div className="pt-2 flex flex-col gap-1.5">
-              <NavLink className={linkClass} to="/">
+              <NavLink className={linkClass} to="/layouts">
                 <FaRegCircle className="inline" />
                 <span className="pl-2">Analytics</span>
               </NavLink>
-              <NavLink className={linkClass} to="/ecommerce">
+              <NavLink className={linkClass} to="/layouts/ecommerce">
                 <FaRegCircle className="inline" />
                 <span className="pl-2">E-Commerce</span>
               </NavLink>
@@ -118,7 +118,7 @@ const Sidebar = () => {
         <div className="pt-5">
           <p
             className={
-              checkLocation("/ecommerce")
+              checkLocation("/layouts/ecommerce")
                 ? "text-[#999999] uppercase px-3"
                 : "uppercase px-3"
             }
@@ -126,19 +126,19 @@ const Sidebar = () => {
             Apps
           </p>
           <div className="pt-2 flex flex-col gap-1.5">
-            <NavLink className={linkClass} to="/email">
+            <NavLink className={linkClass} to="/layouts/email">
               <MdOutlineEmail className="inline text-base" />
               <span className="pl-2">Email</span>
             </NavLink>
-            <NavLink className={linkClass} to="/chat">
+            <NavLink className={linkClass} to="/layouts/chat">
               <MdChatBubbleOutline className="text-base inline" />
               <span className="pl-2">Chat</span>
             </NavLink>
-            <NavLink className={linkClass} to="/to-do">
+            <NavLink className={linkClass} to="/layouts/to-do">
               <FiCheckSquare className="text-base inline" />
               <span className="pl-2">Todo</span>
             </NavLink>
-            <NavLink className={linkClass} to="/calender">
+            <NavLink className={linkClass} to="/layouts/calender">
               <MdOutlineCalendarToday className="text-base inline" />
               <span className="pl-2">Calendar</span>
             </NavLink>
@@ -149,7 +149,7 @@ const Sidebar = () => {
         <div className="pt-5">
           <p
             className={
-              checkLocation("/ecommerce")
+              checkLocation("/layouts/ecommerce")
                 ? "text-[#999999] uppercase px-3"
                 : "uppercase px-3"
             }
@@ -169,7 +169,7 @@ const Sidebar = () => {
               {otherMenu ? <FaAngleDown /> : <FaAngleRight />}
             </div>
             {/* color */}
-            <NavLink to="/color" className={linkClass}>
+            <NavLink to="/layouts/color" className={linkClass}>
               <FiDroplet className="inline text-base" />
               <span className="pl-2">Color</span>
             </NavLink>
@@ -187,11 +187,11 @@ const Sidebar = () => {
               </div>
               {openCard && (
                 <div className="pt-2 flex flex-col gap-1.5">
-                  <NavLink className={linkClass} to="/card">
+                  <NavLink className={linkClass} to="/layouts/card">
                     <FaRegCircle className="inline" />
                     <span className="pl-2">Card Action</span>
                   </NavLink>
-                  <NavLink className={linkClass} to="/electronics">
+                  <NavLink className={linkClass} to="/layouts/electronics">
                     <IoMdWatch className="inline" />
                     <span className="pl-2">Electronics</span>
                   </NavLink>
@@ -200,7 +200,7 @@ const Sidebar = () => {
             </div>
 
             {/* table */}
-            <NavLink to="/table" className={linkClass}>
+            <NavLink to="/layouts/table" className={linkClass}>
               <MdOutlineGridView className="inline text-base" />
               <span className="pl-2">Table</span>
             </NavLink>
@@ -223,7 +223,7 @@ const Sidebar = () => {
         <div className="pt-5">
           <p
             className={
-              checkLocation("/ecommerce")
+              checkLocation("/layouts/ecommerce")
                 ? "text-[#999999] uppercase px-3"
                 : "uppercase px-3"
             }
@@ -244,19 +244,19 @@ const Sidebar = () => {
             </div>
 
             {/* form layouts */}
-            <NavLink to="form-layout" className={linkClass}>
+            <NavLink to="/layouts/form-layout" className={linkClass}>
               <TbLayoutSidebar className="inline text-base" />
               <span className="pl-2">Form Layouts</span>
             </NavLink>
 
             {/* form wizard */}
-            <NavLink to="form-wizard" className={linkClass}>
+            <NavLink to="/layouts/form-wizard" className={linkClass}>
               <FiFileText className="inline text-base" />
               <span className="pl-2">Form Wizrad</span>
             </NavLink>
 
             {/* form validation */}
-            <NavLink to="form-validate" className={linkClass}>
+            <NavLink to="/layouts/form-validate" className={linkClass}>
               <FiCheckCircle className="inline text-base" />
               <span className="pl-2">Form Validation</span>
             </NavLink>
@@ -267,7 +267,7 @@ const Sidebar = () => {
         <div className="pt-5">
           <p
             className={
-              checkLocation("/ecommerce")
+              checkLocation("/layouts/ecommerce")
                 ? "text-[#999999] uppercase px-3"
                 : "uppercase px-3"
             }
@@ -287,7 +287,7 @@ const Sidebar = () => {
               {otherMenu ? <FaAngleDown /> : <FaAngleRight />}
             </div>
             {/* coming */}
-            <NavLink className={linkClass} to="/coming-soon">
+            <NavLink className={linkClass} to="/layouts/coming-soon">
               <FaRegClock className="inline text-base" />
               <span className="pl-2">Coming Soon</span>
             </NavLink>
@@ -305,52 +305,52 @@ const Sidebar = () => {
             </div>
 
             {/* maintenance */}
-            <NavLink className={linkClass} to="/maintain">
+            <NavLink className={linkClass} to="/layouts/maintain">
               <FiAnchor className="inline text-base" />
               <span className="pl-2">Maintenance</span>
             </NavLink>
 
             {/* profile */}
-            <NavLink className={linkClass} to="/profile">
+            <NavLink className={linkClass} to="/layouts/profile">
               <FiUser className="inline text-base" />
               <span className="pl-2">Profile</span>
             </NavLink>
 
             {/* FAQ */}
-            <NavLink className={linkClass} to="/faq">
+            <NavLink className={linkClass} to="/layouts/faq">
               <FaRegCircleQuestion className="inline text-base" />
               <span className="pl-2">FAQ</span>
             </NavLink>
 
             {/* Knowledge base */}
-            <NavLink className={linkClass} to="/knowledge-base">
+            <NavLink className={linkClass} to="/layouts/knowledge-base">
               <FaRegCircleQuestion className="inline text-base" />
               <span className="pl-2">Knowledge Base</span>
             </NavLink>
 
             {/* search */}
-            <NavLink className={linkClass} to="/search">
+            <NavLink className={linkClass} to="/layouts/search">
               <FiSearch className="inline text-base" />
               <span className="pl-2">Search</span>
             </NavLink>
 
             {/* invoices */}
-            <NavLink className={linkClass} to="/invoices">
+            <NavLink className={linkClass} to="/layouts/invoices">
               <FaRegFile className="inline text-base" />
               <span className="pl-2">Invoices</span>
             </NavLink>
           </div>
         </div>
 
-        {(checkLocation("/ecommerce") ||
-          checkLocation("/card") ||
-          checkLocation("/electronics")) && (
+        {(checkLocation("/layouts/ecommerce") ||
+          checkLocation("/layouts/card") ||
+          checkLocation("/layouts/electronics")) && (
           <>
             {/* charts and map */}
             <div className="pt-5">
               <p
                 className={
-                  checkLocation("/ecommerce")
+                  checkLocation("/layouts/ecommerce")
                     ? "text-[#999999] uppercase px-3"
                     : "uppercase px-3"
                 }
@@ -370,7 +370,7 @@ const Sidebar = () => {
                   {otherMenu ? <FaAngleDown /> : <FaAngleRight />}
                 </div>
                 {/* Map */}
-                <NavLink className={linkClass} to="/google-map">
+                <NavLink className={linkClass} to="/layouts/google-map">
                   <RiMap2Line className="inline text-base" />
                   <span className="pl-2">Google Maps</span>
                 </NavLink>
@@ -381,7 +381,7 @@ const Sidebar = () => {
             <div className="pt-5">
               <p
                 className={
-                  checkLocation("/ecommerce")
+                  checkLocation("/layouts/ecommerce")
                     ? "text-[#999999] uppercase px-3"
                     : "uppercase px-3"
                 }
@@ -401,19 +401,19 @@ const Sidebar = () => {
                   {otherMenu ? <FaAngleDown /> : <FaAngleRight />}
                 </div>
                 {/* Quil Editor */}
-                <NavLink className={linkClass} to="/quill-editor">
+                <NavLink className={linkClass} to="/layouts/quill-editor">
                   <FaRegEdit className="inline text-base" />
                   <span className="pl-2">Quill Editor</span>
                 </NavLink>
 
                 {/* drag and drop */}
-                <NavLink to="/drag-drop" className={linkClass}>
+                <NavLink to="/layouts/drag-drop" className={linkClass}>
                   <FiDroplet className="inline text-base" />
                   <span className="pl-2">Drag & Drop</span>
                 </NavLink>
 
                 {/* datepicker */}
-                <NavLink className={linkClass} to="/datepicker">
+                <NavLink className={linkClass} to="/layouts/datepicker">
                   <MdOutlineCalendarToday className="text-base inline" />
                   <span className="pl-2">Datepicker</span>
                 </NavLink>
@@ -424,7 +424,7 @@ const Sidebar = () => {
             <div className="pt-5">
               <p
                 className={
-                  checkLocation("/ecommerce")
+                  checkLocation("/layouts/ecommerce")
                     ? "text-[#999999] uppercase px-3"
                     : "uppercase px-3"
                 }
@@ -444,7 +444,7 @@ const Sidebar = () => {
                   {otherMenu ? <FaAngleDown /> : <FaAngleRight />}
                 </div>
                 {/* Map */}
-                <NavLink className={linkClass} to="/disabled">
+                <NavLink className={linkClass} to="/layouts/disabled">
                   <FaRegEyeSlash className="inline text-base" />
                   <span className="pl-2">Disabled Menu</span>
                 </NavLink>

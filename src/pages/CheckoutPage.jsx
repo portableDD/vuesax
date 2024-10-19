@@ -37,7 +37,7 @@ const CheckoutPage = () => {
             You have no items in your shopping cart. Let’s go buy something
           </p>
           <button className="w-72 py-3 px-3 bg-[#6F64F8] text-center rounded-md uppercase text-xs font-medium">
-            <Link to={"/electronics"}>Continue Shopping</Link>
+            <Link to={"/layouts/electronics"}>Continue Shopping</Link>
           </button>
         </div>
       ) : (

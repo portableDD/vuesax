@@ -23,19 +23,19 @@ const ProductNavbar = () => {
             <option value="list">List</option>
           </select>
           <Link
-            to={"/electronics"}
+            to={"/layouts/electronics"}
             className="bg-white px-1.5 py-1 rounded-md shadow-navbar "
           >
             <MdOutlineGridView className="text-base" />
           </Link>
           <Link
-            to={"/electronics/list"}
+            to={"/layouts/electronics/list"}
             className="bg-white px-1.5 py-1 rounded-lg shadow-navbar "
           >
             <BsList className="text-base" />
           </Link>
           <Link
-            to={"/checkout"}
+            to={"/layouts/checkout"}
             className="bg-white px-1.5 py-1 rounded-lg shadow-navbar z-10"
           >
             <MdOutlineShoppingCart className="text-base" />

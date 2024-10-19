@@ -15,7 +15,7 @@ const SingleProductList = ({
   id,
   addToCart,
   count,
-  handleChange
+  handleChange,
 }) => {
   const location = useLocation();
 
@@ -30,7 +30,7 @@ const SingleProductList = ({
         {/* img and desc */}
         <div
           className={
-            checkLocation("/electronics/list")
+            checkLocation("/layouts/electronics/list")
               ? "w-full flex justify-center item-center flex-col lg:flex-row gap-5 py-3 px-3 lg:border-r border-[#DADADA80] xl:max-w-[80%]"
               : "w-full flex justify-center item-center flex-col lg:flex-row gap-5 py-3 px-3 lg:border-r border-[#DADADA80] xl:max-w-[70%]"
           }
@@ -45,14 +45,18 @@ const SingleProductList = ({
                 By <span className="text-[#6F64F8]">{by}</span>
               </span>
             </p>
-            {checkLocation("/electronics/list") ? (
+            {checkLocation("/layouts/electronics/list") ? (
               <div className="text-xs w-full xl:max-w-[80%]">{desc}</div>
             ) : (
               <div className="text-xs w-ful flex flex-col gap-5">
                 <p className="text-[#2DCD7A]">in stock</p>
                 <div>
                   <p>Quantity</p>
-                  <Counter id={id} count={count} handleCountChange={handleChange} />
+                  <Counter
+                    id={id}
+                    count={count}
+                    handleCountChange={handleChange}
+                  />
                 </div>
                 <div>
                   <p className="text-[#999999]">Delivery by, Sat Mar 23</p>
@@ -65,7 +69,7 @@ const SingleProductList = ({
         {/* move to cart and wishlist, ratings too */}
         <div
           className={
-            checkLocation("/electronics/list")
+            checkLocation("/layouts/electronics/list")
               ? "flex flex-col items-center gap-3 py-3 px-3 xl:w-full xl:max-w-[20%]"
               : "flex flex-col items-center gap-3 py-3 px-3 xl:w-full xl:max-w-[30%]"
           }
@@ -78,7 +82,7 @@ const SingleProductList = ({
               </span>
             </p>
             <p className="font-medium mt-2">&#x24;{price}</p>
-            {checkLocation("/electronics/list") ? (
+            {checkLocation("/layouts/electronics/list") ? (
               <div className="text-xs flex justify-center items-center gap-2">
                 <input
                   id="comments"
@@ -97,7 +101,7 @@ const SingleProductList = ({
           </div>
           {/* wishlist */}
 
-          {checkLocation("/electronics/list") ? (
+          {checkLocation("/layouts/electronics/list") ? (
             <button className="w-full py-3 px-3 bg-[#B8C2CC] text-[#2C2C20] text-center rounded-md uppercase text-xs font-medium">
               <Link to={"/wishlist"}>
                 <FaRegHeart className="inline" />
@@ -116,15 +120,13 @@ const SingleProductList = ({
 
           {/* add to cart */}
 
-          {checkLocation("/electronics/list") ? (
+          {checkLocation("/layouts/electronics/list") ? (
             <button
               className="w-full py-3 px-3 bg-[#6F64F8] text-center rounded-md uppercase text-xs font-medium"
               onClick={() => addToCart(id)}
             >
-              <Link to={"/checkout"}>
-                <FiShoppingBag className="inline" />
-                <span className="pl-2">add to cart</span>
-              </Link>
+              <FiShoppingBag className="inline" />
+              <span className="pl-2">add to cart</span>
             </button>
           ) : (
             <button className="w-full py-3 px-3 bg-[#6F64F8] text-center rounded-md uppercase text-xs font-medium">

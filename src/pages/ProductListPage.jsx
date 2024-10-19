@@ -21,18 +21,16 @@ const ProductListPage = () => {
     <div className="w-full h-full">
       {product.map((list) => (
         <div key={list.id} className="px-3 py-3">
-          {list.list && (
-            <SingleProductList
-              id={list.id}
-              by={list.by}
-              desc={list.desc}
-              img={list.img}
-              price={list.price}
-              rating={list.rating}
-              title={list.title}
-              addToCart={AddToCart}
-            />
-          )}
+          <SingleProductList
+            id={list.id}
+            by={list.by}
+            desc={list.desc}
+            img={list.img}
+            price={list.price}
+            rating={list.rating}
+            title={list.title}
+            addToCart={AddToCart}
+          />
         </div>
       ))}
     </div>

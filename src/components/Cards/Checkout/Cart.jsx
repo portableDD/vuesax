@@ -21,24 +21,24 @@ const Cart = () => {
       payload: { id, count: newCount },
     });
   };
+
+  console.log(cart);
   return (
     <>
       {cart.map((list) => (
         <div key={list.id} className="px-3 py-3">
-          {list.checkout && (
-            <SingleProductList
-              id={list.id}
-              by={list.by}
-              desc={list.desc}
-              img={list.img}
-              price={list.price}
-              rating={list.rating}
-              title={list.title}
-              remove={deleteFeedback}
-              count={list.count}
-              handleChange={handleCountChange}
-            />
-          )}
+          <SingleProductList
+            id={list.id}
+            by={list.by}
+            desc={list.desc}
+            img={list.img}
+            price={list.price}
+            rating={list.rating}
+            title={list.title}
+            remove={deleteFeedback}
+            count={list.count}
+            handleChange={handleCountChange}
+          />
         </div>
       ))}
     </>

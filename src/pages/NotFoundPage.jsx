@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const NotFoundPage = () => {
   return (
-    <section className="text-center flex flex-col justify-center items-center h-[89vh]">
+    <section className="text-center flex flex-col justify-center items-center h-screen bg-mainBgColor">
         {/* <FaExclamationTriangle className="text-yellow-400 text-6xl mb-4" />
       <h1 className="text-6xl font-bold mb-4">404 Not Found</h1>
       <p className="text-xl mb-5">This page does not exist</p>
@@ -17,7 +17,7 @@ const NotFoundPage = () => {
           <h1 className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-5xl">Page not found</h1>
           <p className="mt-6 text-base leading-7 text-white">Sorry, we couldn’t find the page you’re looking for.</p>
           <div className="mt-10">
-            <Link to="/" className="text-base font-semibold leading-7 text-indigo-600">
+            <Link to="/layouts" className="text-base font-semibold leading-7 text-indigo-600">
               <span aria-hidden="true">&larr;</span> Back to home
             </Link>
           </div>
