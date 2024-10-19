@@ -36,7 +36,7 @@ const SignIn = () => {
       );
 
       if (userCredential.user) {
-        navigate("/");
+        navigate("/layouts");
         toast.success("Welcome back");
       }
     } catch (error) {
